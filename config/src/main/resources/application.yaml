@@ -1,0 +1,8 @@
+server:
+      port:8081
+
+datasource:
+        driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        url: jdbc:sqlserver://localhost:1433;databaseName=bank;IntegratedSecurity=true;
+
+baseURL: /bank

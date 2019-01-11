@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="1394" started-at="2019-01-11T05:43:15Z" finished-at="2019-01-11T05:43:16Z">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="1394" started-at="2019-01-11T05:43:15Z" finished-at="2019-01-11T05:43:16Z">
+      <class name="com.nuance.him.controller.test.CustomerControllerTest">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.nuance.him.controller.test.CustomerControllerTest@22eeefeb]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="10" started-at="2019-01-11T11:13:15Z" finished-at="2019-01-11T11:13:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.nuance.him.controller.test.CustomerControllerTest@22eeefeb]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="1237" started-at="2019-01-11T11:13:15Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2019-01-11T11:13:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.controller.test.CustomerControllerTest@22eeefeb]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2019-01-11T11:13:16Z" finished-at="2019-01-11T11:13:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.controller.test.CustomerControllerTest.testAddCustomer() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.controller.test.CustomerControllerTest@22eeefeb]" name="setUp" is-config="true" duration-ms="37" started-at="2019-01-11T11:13:16Z" finished-at="2019-01-11T11:13:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testAddCustomer()[pri:0, instance:com.nuance.him.controller.test.CustomerControllerTest@22eeefeb]" name="testAddCustomer" duration-ms="71" started-at="2019-01-11T11:13:16Z" finished-at="2019-01-11T11:13:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddCustomer -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.controller.test.CustomerControllerTest@22eeefeb]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2019-01-11T11:13:16Z" finished-at="2019-01-11T11:13:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.controller.test.CustomerControllerTest.testAddCustomer() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.controller.test.CustomerControllerTest@22eeefeb]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="6" started-at="2019-01-11T11:13:16Z" finished-at="2019-01-11T11:13:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.controller.test.CustomerControllerTest.testDisplayCustomers() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.controller.test.CustomerControllerTest@22eeefeb]" name="setUp" is-config="true" duration-ms="6" started-at="2019-01-11T11:13:16Z" finished-at="2019-01-11T11:13:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testDisplayCustomers()[pri:0, instance:com.nuance.him.controller.test.CustomerControllerTest@22eeefeb]" name="testDisplayCustomers" duration-ms="16" started-at="2019-01-11T11:13:16Z" finished-at="2019-01-11T11:13:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDisplayCustomers -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.controller.test.CustomerControllerTest@22eeefeb]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2019-01-11T11:13:16Z" finished-at="2019-01-11T11:13:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.controller.test.CustomerControllerTest.testDisplayCustomers() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.nuance.him.controller.test.CustomerControllerTest@22eeefeb]" name="springTestContextAfterTestClass" is-config="true" duration-ms="1" started-at="2019-01-11T11:13:16Z" finished-at="2019-01-11T11:13:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- com.nuance.him.controller.test.CustomerControllerTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

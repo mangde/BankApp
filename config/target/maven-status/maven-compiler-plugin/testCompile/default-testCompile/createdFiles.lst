@@ -1,0 +1,3 @@
+com\nuance\him\config\customer\CustomerDaoConfigTest.class
+com\nuance\him\config\customer\CustomerControllerConfigTest.class
+com\nuance\him\config\customer\CustomerServicesConfigTest.class

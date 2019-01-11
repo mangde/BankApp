@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.* COPYRIGHT: Copyright (c) 2018 by Nuance Communications, Inc.
+  ~ Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+  -->
+
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="addCustomer">
+        <![CDATA[INSERT INTO customerDetail(name,phone) VALUES(:name,:phone)]]>
+    </entry>
+
+    <entry key="addAddress">
+        <![CDATA[INSERT INTO address(address1,city,customerId) VALUES(:address,:city,:customerId)]]>
+    </entry>
+    <entry key="selectAllCustomers">
+        <![CDATA[SELECT c.customerId,name,phone,address1,city
+                    FROM customerDetail c
+                    INNER JOIN address a
+                    ON c.customerId=a.customerId
+            GROUP BY c.customerId,name,phone, address1,city
+        ]]>
+    </entry>
+    <entry key="addAccount">
+        <![CDATA[INSERT INTO account(accTypeId,balance,customerId) VALUES(:accTypeId,:balance,:customerId)]]>
+    </entry>
+    <entry key="getAccTypeId">
+        <![CDATA[SELECT accTypeId FROM acctype WHERE accTypeDesc=:type]]>
+    </entry>
+</properties>

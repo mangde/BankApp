@@ -1,0 +1,7 @@
+<component name="CopyrightManager">
+  <settings default="nuance">
+    <module2copyright>
+      <element module="All" copyright="nuance" />
+    </module2copyright>
+  </settings>
+</component>
