@@ -6,7 +6,8 @@
  *  *
  *
  */
-/**
- * package store configuration class.
- */
-package com.nuance.him.config;
+
+package com.nuance.him.dao.transaction;
+
+public class TransactionMapper {
+}

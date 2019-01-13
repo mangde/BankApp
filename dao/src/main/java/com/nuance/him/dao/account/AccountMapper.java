@@ -1,6 +1,7 @@
 /*
- * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.* COPYRIGHT: Copyright (c) 2018 by Nuance Communications, Inc.
- * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+ * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.*
+ * Warning: This product is protected by United States copyright law.
+ * Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  */
 package com.nuance.him.dao.account;
 
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 /**
  * RowMapper to display the table rows mapping them to the objects.
  */
+@SuppressWarnings("WeakerAccess")
 public  class AccountMapper implements RowMapper<Account> {
 
     /**

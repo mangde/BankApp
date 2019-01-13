@@ -7,6 +7,6 @@
  *
  */
 /**
- * package store configuration class.
+ * package contains account configuration classes.
  */
-package com.nuance.him.config;
+package com.nuance.him.config.accountconfig;

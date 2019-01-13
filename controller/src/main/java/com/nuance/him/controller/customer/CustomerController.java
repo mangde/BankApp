@@ -1,12 +1,15 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+ *  Warning: This product is protected by United States copyright law.
+ *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  *
  */
 package com.nuance.him.controller.customer;
 
-import javax.validation.Valid;
-import javax.validation.constraints.Min;
+import com.nuance.him.controller.exception.CustomErrorType;
+import com.nuance.him.model.customermodel.Customer;
+import com.nuance.him.service.customer.CustomerService;
+import com.nuance.him.service.serviceexception.CustomerServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.PropertySource;
@@ -14,17 +17,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
-import com.nuance.him.controller.exception.CustomErrorType;
-import com.nuance.him.model.customermodel.Customer;
-import com.nuance.him.service.customer.CustomerService;
-import com.nuance.him.service.serviceexception.CustomerServiceException;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -55,19 +51,17 @@ public class CustomerController {
      * @return  CustomerId
      */
 
-    @RequestMapping(value = ADD_CUSTOMER, method = RequestMethod.POST)
+    @RequestMapping(value = CustomerController.ADD_CUSTOMER, method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<Customer>addNewCustomer(@Valid @RequestParam("name") @Min(5)  String name,
         @RequestParam("address") @Valid @Min(5) String address,@Valid @RequestParam("city") @Min(5)  String city,
         @RequestParam("phone")  @Valid  String phone) {
 
-        int customerId=0;
         try {
-            Customer customer = new Customer(name,Long.parseLong(phone), address, city);
 
-            log.info("controller add customermodel{}", customer);
-            customerId = customerService.addCustomer(customer);
-            return new ResponseEntity("Customer is registered successfully\n customer model ID: " + customerId, HttpStatus.CREATED);
+            int customerId = customerService.addCustomer(new Customer(name,Long.parseLong(phone), address, city));
+            return new ResponseEntity("Customer is registered successfully\n" +
+                    " customerID: " + customerId, HttpStatus.CREATED);
 
         }catch (NumberFormatException nfe){
             return new ResponseEntity(new CustomErrorType(nfe.getCause().getMessage()), HttpStatus.BAD_REQUEST);
@@ -84,17 +78,15 @@ public class CustomerController {
      *
      * @return all customer details
      */
-    @RequestMapping(value = DISPLAY_CUSTOMERS,method = RequestMethod.GET)
-    public ResponseEntity<?> displayCustomers() {
-        log.info("display customer");
+    @RequestMapping(value = CustomerController.DISPLAY_CUSTOMERS,method = RequestMethod.GET)
+    public ResponseEntity displayCustomers() {
         List<Customer> customerList;
         try {
             customerList=customerService.getAllCustomers();
         } catch (CustomerServiceException e) {
-            log.error("Error in display customer",e.getCause() );
             return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<List>(customerList,HttpStatus.OK);
+        return new ResponseEntity(customerList,HttpStatus.OK);
     }
 
 
@@ -106,7 +98,9 @@ public class CustomerController {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public List<String> handleValidationExceptions(MethodArgumentNotValidException ex) {
-        return ex.getBindingResult().getAllErrors().stream().map(ObjectError::getDefaultMessage).collect(Collectors.toList());
+        return ex.getBindingResult().getAllErrors().stream()
+                .map(ObjectError::getDefaultMessage)
+                .collect(Collectors.toList());
     }
 
 }

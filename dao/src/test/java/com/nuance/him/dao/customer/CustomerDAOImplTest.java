@@ -1,6 +1,7 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+ *  Warning: This product is protected by United States copyright law.
+ *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  *
  */
 package com.nuance.him.dao.customer;
@@ -24,28 +25,33 @@ import static org.testng.Assert.assertNotNull;
 @TestPropertySource(value = { "classpath:sql-queries.xml" })
 public class CustomerDAOImplTest extends AbstractTransactionalTestNGSpringContextTests {
     private static final String INSERT_CUSTOMER = "addCustomer";
-    private static final String INSERT_CUST_ADDRESS = "addAddress";
+    private static final String INSERT_CUSTOMER_ADDRESS = "addAddress";
     private static final String SELECT_ALL_CUSTOMER = "selectAllCustomers";
+    private static final String NAME = "yogi";
+    private static final long PHONE = 9545090850L;
+    private static final String ADDRESS = "Mumbai";
+    private static final String CITY = "Mumbai";
 
 
-    @Value("${" + INSERT_CUSTOMER + "}")
+
+    @Value("${" + CustomerDAOImplTest.INSERT_CUSTOMER + "}")
     private String insertCustomer;
 
-    @Value("${" + INSERT_CUST_ADDRESS + "}")
+    @Value("${" + CustomerDAOImplTest.INSERT_CUSTOMER_ADDRESS + "}")
     private String insertAddress;
-    @Value("${" + SELECT_ALL_CUSTOMER + "}")
+    @Value("${" + CustomerDAOImplTest.SELECT_ALL_CUSTOMER + "}")
     private String getSelectAll;
 
     private CustomerDAO customerDAO;
     private Customer customer;
 
     @Autowired
-    private NamedParameterJdbcTemplate jdbcTemplate;
+    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     @BeforeMethod
     public void setUp()  {
-        customerDAO=new CustomerDAOImpl(jdbcTemplate,insertCustomer,insertAddress,getSelectAll);
-        customer = new Customer("yogesh",9545090850l,"pune","pune");
+        customerDAO=new CustomerDAOImpl(namedParameterJdbcTemplate,insertCustomer,insertAddress,getSelectAll);
+        customer = new Customer(CustomerDAOImplTest.NAME, CustomerDAOImplTest.PHONE, CustomerDAOImplTest.ADDRESS, CustomerDAOImplTest.CITY);
 
     }
 
@@ -53,8 +59,8 @@ public class CustomerDAOImplTest extends AbstractTransactionalTestNGSpringContex
     @Transactional
     public void testAddCustomer() throws Exception {
         assertNotNull(customerDAO);
-        int custid=customerDAO.addCustomer(customer);
-        assertNotEquals(0,custid);
+        final int customerId=customerDAO.addCustomer(customer);
+        assertNotEquals(0,customerId);
     }
 
     @Test

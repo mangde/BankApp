@@ -17,6 +17,11 @@ import static org.testng.Assert.assertNotNull;
 
 public class CustomerServiceImplTest {
 
+    public static final String NAME = "Yo";
+    public static final long PHONE = 9545090850L;
+    public static final String ADDRESS = "pune";
+    public static final String CITY = "pune";
+
     @Mock
     private CustomerDAO customerDAO;
     private CustomerService customerService;
@@ -27,7 +32,7 @@ public class CustomerServiceImplTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         customerService = new CustomerServiceImpl(customerDAO);
-        customer = new Customer("yogesh", 9545090850l, "pune", "pune");
+        customer = new Customer(CustomerServiceImplTest.NAME, CustomerServiceImplTest.PHONE, CustomerServiceImplTest.ADDRESS, CustomerServiceImplTest.CITY);
     }
 
     @Test

@@ -7,13 +7,13 @@ import com.nuance.him.service.serviceexception.AccountServiceException;
 
 public class AccountServiceImpl implements AccountService {
 
-    private AccountDAO accountDAO;
+    private final AccountDAO accountDAO;
     public AccountServiceImpl(AccountDAO accountDAO) {
         this.accountDAO=accountDAO;
     }
 
     @Override
-    public int addAccount(Account account) throws AccountServiceException {
+    public int addAccount( Account account) throws AccountServiceException {
         try{
             return accountDAO.addAccount(account);
         }catch (AccountDAOException a){

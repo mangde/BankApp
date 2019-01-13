@@ -1,6 +1,7 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+ *  Warning: This product is protected by United States copyright law.
+  *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  *
  */
 package com.nuance.him.controller.test;
@@ -35,13 +36,13 @@ public class TestControllerConfig {
      */
     @Bean
     public CustomerController customerController() {
-        log.info("setting up test  CustomerController  bean");
+        TestControllerConfig.log.info("setting up test  CustomerController  bean");
         MockitoAnnotations.initMocks(this);
         return new CustomerController(customerService);
     }
 
     /**
-     * crating bean for accesing values form property file
+     * crating bean for accessing values form property file
      * @return propertySource Bean
      */
     @Bean

@@ -6,6 +6,6 @@
  *
  */
 /**
- * package contains account configuration classes.
+ * contains test class for configuration
  */
-package com.nuance.him.config.accountConfig;
+package com.nuance.him.config;

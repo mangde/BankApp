@@ -6,7 +6,8 @@
  *  *
  *
  */
-/**
- * package store configuration class.
- */
-package com.nuance.him.config;
+
+package com.nuance.him.service.transaction;
+
+public interface TransactionServices {
+}

@@ -1,6 +1,7 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+ *  Warning: This product is protected by United States copyright law.
+ *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  *
  */
 package com.nuance.him.controller.test;
@@ -37,20 +38,26 @@ public class CustomerControllerTest extends AbstractTestNGSpringContextTests {
     private static final String BASE_URL = "baseURL";
     private static final String ADD_CUSTOMER = "Customer.addCustomer";
     private static final String SELECT_ALL_CUSTOMER = "Customer.SelectAllCustomer";
-    @Value("${" + BASE_URL + "}")
+    private static final String NAME = "Harsh";
+    private static final String CITY = "Pune";
+    private static final String ADDRESS = "Pune";
+    private static final String PHONE = "9545090850";
+
+
+    @Value("${" + CustomerControllerTest.BASE_URL + "}")
     private String bankURL;
     /**
      * add customer url
      */
-    @Value("${" + ADD_CUSTOMER + "}")
+    @Value("${" + CustomerControllerTest.ADD_CUSTOMER + "}")
     private String getAddCustomer;
-    @Value("${" + SELECT_ALL_CUSTOMER + "}")
+    @Value("${" + CustomerControllerTest.SELECT_ALL_CUSTOMER + "}")
     private String getSelectAllCustomer;
     @Mock
     private CustomerService customerService;
     private MockMvc mockMvc;
     private Customer customer;
-    List<Customer> customers;
+    private List<Customer> customers;
     /**
      * WebApplicationContext to TestNG cases.
      */
@@ -75,7 +82,12 @@ public class CustomerControllerTest extends AbstractTestNGSpringContextTests {
     public void testAddCustomer() throws Exception {
         when(customerService.addCustomer(customer)).thenReturn(1);
 
-        mockMvc.perform(MockMvcRequestBuilders.post(bankURL + getAddCustomer).param("name", "yogesh").param("phone", "954595854").param("address", "pune").param("city", "pune")).andExpect(status().isCreated());
+        mockMvc.perform(MockMvcRequestBuilders.post(bankURL + getAddCustomer)
+                .param("name", CustomerControllerTest.NAME)
+                .param("phone", CustomerControllerTest.PHONE)
+                .param("address", CustomerControllerTest.ADDRESS)
+                .param("city", CustomerControllerTest.CITY))
+                .andExpect(status().isCreated());
 
     }
 
@@ -88,6 +100,7 @@ public class CustomerControllerTest extends AbstractTestNGSpringContextTests {
     public void testDisplayCustomers() throws Exception {
         when(customerService.getAllCustomers()).thenReturn(customers);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.get(bankURL + getSelectAllCustomer)).andExpect(status().isOk());
+        this.mockMvc.perform(MockMvcRequestBuilders.get(bankURL + getSelectAllCustomer))
+                .andExpect(status().isOk());
     }
 }

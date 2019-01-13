@@ -1,11 +1,12 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.*
- * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+ * Warning: This product is protected by United States copyright law.
+  * Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  */
 package com.nuance.him.service.serviceexception;
 
 /**
- * Customer exception class for customermodel service.
+ * Customer exception class for customer model service.
  */
 public class CustomerServiceException extends Exception {
 
@@ -26,6 +27,6 @@ public class CustomerServiceException extends Exception {
      */
     @Override
     public String getMessage() {
-        return MESSAGE;
+        return CustomerServiceException.MESSAGE;
     }
 }
