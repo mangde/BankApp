@@ -24,10 +24,12 @@ public class CustomerDAOImpl implements CustomerDAO {
     private final String SELECT_ALL_CUSTOMER;
 
     public CustomerDAOImpl(NamedParameterJdbcTemplate jdbcTemplate, String insertCustomer, String insertAddress,String getAllCustomer) {
+
         namedParameterJdbcTemplate = jdbcTemplate;
         INSERT_CUSTOMER = insertCustomer;
         INSERT_ADDRESS = insertAddress;
         SELECT_ALL_CUSTOMER=getAllCustomer;
+
     }
 
     @Override
@@ -57,6 +59,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public List<Customer> getAllCustomers() throws CustomerDaoException {
         try{
+
             return namedParameterJdbcTemplate.query(SELECT_ALL_CUSTOMER,new CustomerMapper());
         } catch (DataAccessException e) {
             throw new CustomerDaoException("Failed to display customer details",e);

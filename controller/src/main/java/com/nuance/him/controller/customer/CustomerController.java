@@ -85,9 +85,11 @@ public class CustomerController {
      * @return all customer details
      */
     @RequestMapping(value = DISPLAY_CUSTOMERS,method = RequestMethod.GET)
-    public ResponseEntity<?> displayCustomers() {
+    public ResponseEntity displayCustomers() {
         log.info("display customer");
         List<Customer> customerList;
+        System.out.println(ADD_CUSTOMER);
+        System.out.println(DISPLAY_CUSTOMERS);
         try {
             customerList=customerService.getAllCustomers();
         } catch (CustomerServiceException e) {

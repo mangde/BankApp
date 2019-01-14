@@ -32,6 +32,7 @@ public class CustomerDaoConfig {
     private static final String SELECT_ALL_CUSTOMERS = "selectAllCustomers";
     @Autowired
     private NamedParameterJdbcTemplate jdbcTemplate;
+
     @Value("${" + CustomerDaoConfig.INSERT_CUSTOMER + "}")
     private String insertCustomer;
     @Value("${" + CustomerDaoConfig.INSERT_CUST_ADDRESS + "}")
