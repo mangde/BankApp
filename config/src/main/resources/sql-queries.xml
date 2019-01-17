@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
   ~ /*
-  ~  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
-  ~  *  Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
-  ~  *
-  ~  */
+  ~ * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
+  ~ * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+  ~ */
+  ~
   -->
 
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
@@ -30,20 +31,20 @@
         <![CDATA[SELECT accTypeId FROM acctype WHERE accTypeDesc= :type]]>
     </entry>
     <entry key="getBalance">
-        <![CDATA[SELECT balance FROM account WHERE accNo = :accNumber]]>
+        <![CDATA[SELECT balance FROM account WHERE accNumber = :accNumber]]>
     </entry>
     <entry key="depositeAmount">
-        <![CDATA[UPDATE account SET balance=:newBalance WHERE accNo=:accNumber ]]>
+        <![CDATA[UPDATE account SET balance=:balance WHERE accNumber=:accNumber ]]>
     </entry>
     <entry key="accountDetail">
-        <![CDATA[SELECT accNo,accTypeId,balance,customerId FROM account WHERE accNo=:accNumber ]]>
+        <![CDATA[SELECT accNumber,accTypeId,balance,customerId FROM account WHERE accNumber=:accNumber ]]>
     </entry>
 
     <entry key="transfer">
         <![CDATA[INSERT INTO transaction_detail(dateTime,amount,accFrom,accTo,description) VALUES(:dateTime,:amount ,:accFrom,:accTo,:description)]]>
     </entry>
-    <entry key="updateBalance">
-        <![CDATA[UPDATE account SET balance=:newBalance WHERE accNo=:accNumber ]]>
+    <entry key="withDraw">
+        <![CDATA[UPDATE account SET balance=:balance WHERE accNumber=:accNumber ]]>
     </entry>
     <entry key="transactionHistory">
         <![CDATA[SELECT transactionId,dateTime,amount,accFrom,accTo,description FROM transaction_detail WHERE accFrom=:accNumber OR accTo=:accNumber ]]>

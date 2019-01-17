@@ -1,7 +1,6 @@
 /*
- * COPYRIGHT: Copyright (c) 2019 by Nuance Communications.
- * Warning: This product is protected by United States copyright law.
- * Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+ * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
+ * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  */
 package com.nuance.him.dao.customer;
 
@@ -20,23 +19,23 @@ import java.util.List;
 public class CustomerDaoImpl implements CustomerDao {
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-    private final String INSERT_CUSTOMER;
-    private final String INSERT_ADDRESS;
-    private final String SELECT_ALL_CUSTOMER;
+    private final String insertCustomer;
+    private final String insertAddress;
+    private final String getAllCustomer;
 
     /**
-     * constructor of {@link CustomerDaoImpl}.
+     * constructor of { CustomerDaoImpl}.
      *
-     * @param jdbcTemplate instance of {@link NamedParameterJdbcTemplate}
+     * @param namedParameterJdbcTemplate instance of {@link NamedParameterJdbcTemplate}
      * @param insertCustomer query for insert customer
      * @param insertAddress query for insert address
      * @param getAllCustomer query for get all customer record
      */
-    public CustomerDaoImpl(NamedParameterJdbcTemplate jdbcTemplate, String insertCustomer, String insertAddress, String getAllCustomer) {
-        namedParameterJdbcTemplate = jdbcTemplate;
-        INSERT_CUSTOMER = insertCustomer;
-        INSERT_ADDRESS = insertAddress;
-        SELECT_ALL_CUSTOMER = getAllCustomer;
+    public CustomerDaoImpl(NamedParameterJdbcTemplate namedParameterJdbcTemplate, String insertCustomer, String insertAddress, String getAllCustomer) {
+        this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
+        this.insertCustomer = insertCustomer;
+        this.insertAddress = insertAddress;
+        this.getAllCustomer = getAllCustomer;
     }
 
     @Override
@@ -44,10 +43,10 @@ public class CustomerDaoImpl implements CustomerDao {
         KeyHolder holder = new GeneratedKeyHolder();
         MapSqlParameterSource paramSourceCustomer = mapSqlParameterSource(customer);
         try {
-            namedParameterJdbcTemplate.update(INSERT_CUSTOMER, paramSourceCustomer, holder);
+            namedParameterJdbcTemplate.update(insertCustomer, paramSourceCustomer, holder);
             customer.setId(holder.getKey().intValue());
             MapSqlParameterSource paramSourceAddress = mapSqlParameterSource(customer);
-            namedParameterJdbcTemplate.update(INSERT_ADDRESS, paramSourceAddress);
+            namedParameterJdbcTemplate.update(insertAddress, paramSourceAddress);
             return holder.getKey().intValue();
         }
         catch (DataAccessException e) {
@@ -58,7 +57,7 @@ public class CustomerDaoImpl implements CustomerDao {
     @Override
     public List<Customer> getAllCustomers() throws CustomerDaoException {
         try {
-            return namedParameterJdbcTemplate.query(SELECT_ALL_CUSTOMER, new CustomerMapper());
+            return namedParameterJdbcTemplate.query(getAllCustomer, new CustomerMapper());
         }
         catch (DataAccessException e) {
             throw new CustomerDaoException("Failed to display customer details", e);

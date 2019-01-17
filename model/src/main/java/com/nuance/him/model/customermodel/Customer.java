@@ -1,8 +1,6 @@
 /*
- * COPYRIGHT: Copyright (c) 2018 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law.
- *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
- *
+ * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
+ * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  */
 package com.nuance.him.model.customermodel;
 
@@ -32,7 +30,7 @@ public class Customer {
      */
     public Customer(String name, Long phone, String address, String city) {
         this.name = name;
-        this.phone = phone.longValue();
+        this.phone = phone;
         this.address = address;
         this.city = city;
     }

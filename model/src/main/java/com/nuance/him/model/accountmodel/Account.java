@@ -1,8 +1,6 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law.
- *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
- *
+ * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  */
 package com.nuance.him.model.accountmodel;
 
@@ -14,16 +12,16 @@ import javax.persistence.Id;
  */
 public class Account {
 
-
     @Id
     @GeneratedValue
     private int accountNo;
-    private final String  type;
-    private final  double balance;
+    private final String type;
+    private final double balance;
     private final int customerId;
 
     /**
      * Constructor of  Account.
+     *
      * @param type Account type
      * @param balance balance
      * @param customerId customerID
@@ -36,30 +34,34 @@ public class Account {
 
     /**
      * getAccountType.
-     * @return  type
+     *
+     * @return type
      */
     public String getType() {
-        return this.type;
+        return type;
     }
 
     /**
      * GetBalance.
+     *
      * @return balance
      */
     public double getBalance() {
-        return this.balance;
+        return balance;
     }
 
     /**
      * getCustomerId.
+     *
      * @return customerID
      */
     public int getCustomerId() {
-        return this.customerId;
+        return customerId;
     }
 
     /**
      * setAccountNumber.
+     *
      * @param accountNo accountNumber
      */
     public void setAccountNo(int accountNo) {
@@ -68,10 +70,11 @@ public class Account {
 
     /**
      * getAccountNumber.
+     *
      * @return accountNumber
      */
     public int getAccountNo() {
-        return this.accountNo;
+        return accountNo;
     }
 
     @Override

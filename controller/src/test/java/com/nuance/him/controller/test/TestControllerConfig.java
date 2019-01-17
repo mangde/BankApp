@@ -1,8 +1,6 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law.
- *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
- *
+ * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  */
 package com.nuance.him.controller.test;
 
@@ -15,11 +13,11 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import com.nuance.him.controller.account.AccountController;
 import com.nuance.him.controller.customer.CustomerController;
-import com.nuance.him.controller.transaction.TransactionController;
-import com.nuance.him.service.test.account.AccountService;
-import com.nuance.him.service.test.account.AccountServiceImpl;
-import com.nuance.him.service.test.customer.CustomerService;
-import com.nuance.him.service.test.transaction.TransactionServices;
+import com.nuance.him.controller.transaction.TransferAmountController;
+import com.nuance.him.service.account.AccountService;
+import com.nuance.him.service.account.AccountServiceImpl;
+import com.nuance.him.service.customer.CustomerService;
+import com.nuance.him.service.transaction.TransferAmountService;
 
 /**
  * class for creating controller bean for  testing testController.
@@ -31,7 +29,7 @@ public class TestControllerConfig {
     @Mock
     private CustomerService customerService;
     @Mock
-    private TransactionServices transactionServices;
+    private TransferAmountService transferAmountService;
 
     /**
      * crating bean for accessing values form property file.
@@ -76,14 +74,14 @@ public class TestControllerConfig {
     }
 
     /**
-     * Setting bean for testing {@link TransactionController}.
+     * Setting bean for testing {@link TransferAmountController}.
      *
-     * @return transactionServices bean
+     * @return transferAmountService bean
      */
     @Bean
-    public TransactionController transactionController() {
+    public TransferAmountController transactionController() {
         MockitoAnnotations.initMocks(this);
-        return new TransactionController(transactionServices, accountService());
+        return new TransferAmountController(transferAmountService);
     }
 }
 

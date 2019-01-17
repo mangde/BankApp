@@ -1,9 +1,6 @@
 /*
- *
- *  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  *  Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
- *  *
- *
+ * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
+ * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  */
 package com.nuance.him.controller.test;
 
@@ -22,7 +19,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.nuance.him.model.accountmodel.Account;
-import com.nuance.him.service.test.account.AccountService;
+import com.nuance.him.service.account.AccountService;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyDouble;
 import static org.mockito.Matchers.anyInt;
@@ -42,10 +39,11 @@ public class AccountControllerTest extends AbstractTestNGSpringContextTests {
     private static final String DEPOSITE_AMOUNT = "Account.depositeAmount";
     private static final String GET_BALANCE = "Account.getBalance";
     private static final String GET_ACCOUNT_DETAIL = "Account.AccountDetail";
+    private static final String WITHDRAW_AMOUNT = "Account.withDrawAmount";
     private static final String ACC_TYPE = "saving";
     private static final String BALANCE = "5025";
     private static final String CUSTOMER_ID = "1";
-    private static final String ACCOUNT_NO = "2";
+    private static final String ACCOUNT_NO = "3";
     private static final String AMOUNT = "500";
     private static final Double NEW_BALANCE = 2541.23;
     @Value("${" + BASE_URL + "}")
@@ -58,6 +56,8 @@ public class AccountControllerTest extends AbstractTestNGSpringContextTests {
     private String getGetBalance;
     @Value("${" + GET_ACCOUNT_DETAIL + "}")
     private String getGetAccountDetail;
+    @Value("${" + WITHDRAW_AMOUNT + "}")
+    private String getWithdrawAmount;
     @Mock
     private AccountService accountService;
     private MockMvc mockMvc;
@@ -75,7 +75,7 @@ public class AccountControllerTest extends AbstractTestNGSpringContextTests {
     }
 
     /**
-     * customer Open Account method.
+     * Open Account method.
      *
      * @throws Exception exception
      */
@@ -103,7 +103,7 @@ public class AccountControllerTest extends AbstractTestNGSpringContextTests {
     }
 
     /**
-     * customer DepositAmount.
+     * DepositAmount.
      *
      * @throws Exception exception
      */
@@ -137,5 +137,18 @@ public class AccountControllerTest extends AbstractTestNGSpringContextTests {
         when(accountService.getAccountDetail(anyInt())).thenReturn(account);
         mockMvc.perform(MockMvcRequestBuilders.get(bankURL + getGetAccountDetail)
             .param("accNumber", ACCOUNT_NO)).andExpect(status().isOk());
+    }
+
+    /**
+     * withDraw Amount.
+     *
+     * @throws Exception exception
+     */
+    @Test
+    public void testWithDrawAmount() throws Exception {
+        when(accountService.withDrawAmount(anyInt(), anyDouble())).thenReturn(NEW_BALANCE);
+        mockMvc.perform(MockMvcRequestBuilders.put(bankURL + getWithdrawAmount)
+            .param("accNumber", ACCOUNT_NO)
+            .param("amount", AMOUNT)).andExpect(status().isOk());
     }
 }

@@ -1,9 +1,8 @@
-package com.nuance.him.config.accountconfig;/*
+/*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law.
- *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
- *
+ * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  */
+package com.nuance.him.config.accountconfig;
 
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +30,7 @@ public class AccountDaoConfig {
     private static final String GET_BALANCE = "getBalance";
     private static final String DEPOSITE_AMOUNT = "depositeAmount";
     private static final String ACCOUNT_DETAIL = "accountDetail";
+    private static final String WITHDRAW_AMOUNT = "withDraw";
     /**
      * get values of Query AddNewAccount.
      */
@@ -56,6 +56,8 @@ public class AccountDaoConfig {
      */
     @Value("${" + AccountDaoConfig.ACCOUNT_DETAIL + "}")
     private String getAccountDetail;
+    @Value("${" + WITHDRAW_AMOUNT + "}")
+    private String getWithdrawAmount;
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -70,6 +72,7 @@ public class AccountDaoConfig {
         notNull(getGetBalance, "missing getBalance Bean");
         notNull(getDepositeAmount, "missing getDepositeAmount");
         notNull(getAccountDetail, "missing getAccountDetail");
+        notNull(getWithdrawAmount, "missing getWithdrawAmount query");
     }
 
     /**
@@ -79,6 +82,6 @@ public class AccountDaoConfig {
      */
     @Bean
     public AccountDao accountDAO() {
-        return new AccountDaoImpl(namedParameterJdbcTemplate, getAddAccount, getGetAccTypeId, getGetBalance, getDepositeAmount, getAccountDetail);
+        return new AccountDaoImpl(namedParameterJdbcTemplate, getAddAccount, getGetAccTypeId, getGetBalance, getDepositeAmount, getAccountDetail, getWithdrawAmount);
     }
 }

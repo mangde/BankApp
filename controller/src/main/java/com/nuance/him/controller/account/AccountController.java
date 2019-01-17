@@ -1,8 +1,6 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law.
- *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
- *
+ * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  */
 package com.nuance.him.controller.account;
 
@@ -24,8 +22,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import com.nuance.him.controller.exception.CustomErrorType;
 import com.nuance.him.model.accountmodel.Account;
-import com.nuance.him.service.test.account.AccountService;
-import com.nuance.him.service.test.serviceexception.AccountServiceException;
+import com.nuance.him.service.account.AccountService;
+import com.nuance.him.service.serviceexception.AccountServiceException;
 import java.util.Set;
 
 /**
@@ -40,6 +38,7 @@ public class AccountController {
     private static final String GET_BALANCE = "/getBalance";
     private static final String DEPOSITE_AMOUNT = "/deposite";
     private static final String ACCOUNT_DETAILS = "/accountDetail";
+    private static final String WITHDRAW_AMOUNT = "/withDraw";
     private final AccountService accountService;
 
     /**
@@ -61,7 +60,7 @@ public class AccountController {
      */
     @RequestMapping(value = AccountController.OPEN_ACCOUNT, method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity addNewAccount(@RequestParam("type") @NotEmpty @Pattern(regexp = "[a-z A-z]+", message = "AccountType should contain Alphabets only") String type,
+    public ResponseEntity<Account> addNewAccount(@RequestParam("type") @NotEmpty @Pattern(regexp = "[a-z A-z]+", message = "AccountType should contain Alphabets only") String type,
         @RequestParam("balance") @Digits(integer = 6, fraction = 2, message = "wrong balance inputs") double balance,
         @RequestParam("customerId") @Min(value = 0, message = "customer Id Should not empty") int customerId) {
         try {
@@ -83,7 +82,7 @@ public class AccountController {
      */
     @RequestMapping(value = GET_BALANCE, method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity getCurrentBalance(@RequestParam("accNumber") int accNumber) {
+    public ResponseEntity<Double> getCurrentBalance(@RequestParam("accNumber") int accNumber) {
         try {
             double currentbalance = accountService.getCurrentBalance(accNumber);
             return new ResponseEntity("Current Available Balance is : "
@@ -104,7 +103,7 @@ public class AccountController {
      */
     @RequestMapping(value = DEPOSITE_AMOUNT, method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity deposite(@RequestParam("accNumber") int accNumber, @RequestParam("amount") @Digits(integer = 6, fraction = 2, message = "wrong balance inputs") double amount) {
+    public ResponseEntity<Account> deposite(@RequestParam("accNumber") int accNumber, @RequestParam("amount") @Digits(integer = 6, fraction = 2, message = "wrong balance inputs") double amount) {
         try {
             double newBalance = accountService.depositeAmount(accNumber, amount);
             return new ResponseEntity("Amount deposited successfully \n Current Available Balance is : " + newBalance, HttpStatus.OK);
@@ -131,6 +130,26 @@ public class AccountController {
         catch (AccountServiceException e) {
             return new ResponseEntity(new CustomErrorType("Account Not Found"),
                 HttpStatus.NOT_FOUND);
+        }
+    }
+
+    /**
+     * Request Method for withDraw Amount.
+     *
+     * @param accNumber account Number to be debited
+     * @param amount Amount
+     * @return new Updated Balance
+     */
+    @RequestMapping(value = WITHDRAW_AMOUNT, method = RequestMethod.PUT)
+    @ResponseBody
+    public ResponseEntity<Double> withDrawAmount(@RequestParam("accNumber") int accNumber, @RequestParam("amount") @Digits(integer = 6, fraction = 2, message = "wrong balance inputs") double amount) {
+        try {
+            double currentAvailableBalance = accountService.withDrawAmount(accNumber, amount);
+            return new ResponseEntity("Amount withDraw successfully " + amount + " \n Current Available Balance is : " + currentAvailableBalance, HttpStatus.OK);
+        }
+        catch (AccountServiceException e) {
+            return new ResponseEntity(new CustomErrorType("Failed to Deposite balance "),
+                HttpStatus.SERVICE_UNAVAILABLE);
         }
     }
 

@@ -1,8 +1,6 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law.
- *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
- *
+ * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  */
 package com.nuance.him.config.customerconfig;
 
@@ -14,7 +12,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
 import com.nuance.him.controller.customer.CustomerController;
-import com.nuance.him.service.test.customer.CustomerService;
+import com.nuance.him.service.customer.CustomerService;
 import static org.springframework.util.Assert.notNull;
 
 /**

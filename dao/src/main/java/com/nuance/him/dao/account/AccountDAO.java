@@ -1,8 +1,6 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law.
- *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
- *
+ * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  */
 package com.nuance.him.dao.account;
 
@@ -50,4 +48,14 @@ public interface AccountDao {
      * @throws AccountDaoException exception
      */
     Account getAccountDetail(int accountNumber) throws AccountDaoException;
+
+    /**
+     * withDraw amount .
+     *
+     * @param accountNumber account number
+     * @param amount total amount to be withdraw
+     * @return successful withdraw message with value 1
+     * @throws AccountDaoException exception
+     */
+    double withDrawAmount(int accountNumber, double amount) throws AccountDaoException;
 }

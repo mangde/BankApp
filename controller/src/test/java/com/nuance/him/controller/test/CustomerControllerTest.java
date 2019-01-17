@@ -1,8 +1,6 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law.
- *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
- *
+ * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  */
 package com.nuance.him.controller.test;
 
@@ -22,7 +20,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.nuance.him.controller.customer.CustomerController;
 import com.nuance.him.model.customermodel.Customer;
-import com.nuance.him.service.test.customer.CustomerService;
+import com.nuance.him.service.customer.CustomerService;
 import java.util.List;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;

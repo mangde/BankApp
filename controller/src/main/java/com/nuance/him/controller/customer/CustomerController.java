@@ -1,19 +1,12 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law.
- *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
- *
+ * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  */
 package com.nuance.him.controller.customer;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -26,8 +19,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import com.nuance.him.controller.exception.CustomErrorType;
 import com.nuance.him.model.customermodel.Customer;
-import com.nuance.him.service.test.customer.CustomerService;
-import com.nuance.him.service.test.serviceexception.CustomerServiceException;
+import com.nuance.him.service.customer.CustomerService;
+import com.nuance.him.service.serviceexception.CustomerServiceException;
 import java.util.List;
 import java.util.Set;
 
@@ -64,14 +57,13 @@ public class CustomerController {
     @RequestMapping(value = CustomerController.ADD_CUSTOMER, method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<Customer> addNewCustomer(
-        @RequestParam("name")@Pattern(regexp = "[a-z A-z]+", message = "Name should contain Alphabets only") String name,
+        @RequestParam("name") @Pattern(regexp = "[a-z A-z]+", message = "Name should contain Alphabets only") String name,
         @RequestParam("address") String address,
-        @RequestParam("city")@Pattern(regexp = "[a-z A-z]+", message = "City should contain Alphabets only")  String city,
+        @RequestParam("city") @Pattern(regexp = "[a-z A-z]+", message = "City should contain Alphabets only") String city,
         @RequestParam("phone") @Pattern(regexp = "(^$|[0-9]{10})", message = "Phone should 10 digits only") String phone) {
         try {
             int customerId = customerService.addCustomer(new Customer(name, Long.parseLong(phone), address, city));
-            return new ResponseEntity("Customer is registered successfully\n" +
-                " customerID: " + customerId, HttpStatus.CREATED);
+            return new ResponseEntity("Customer is registered successfully\n" + " customerID: " + customerId, HttpStatus.CREATED);
         }
         catch (NumberFormatException nfe) {
             return new ResponseEntity(new CustomErrorType(nfe.getCause().getMessage()), HttpStatus.BAD_REQUEST);
@@ -87,7 +79,7 @@ public class CustomerController {
      * @return all customer details
      */
     @RequestMapping(value = CustomerController.DISPLAY_CUSTOMERS, method = RequestMethod.GET)
-    public ResponseEntity displayCustomers() {
+    public ResponseEntity<Customer> displayCustomers() {
         List<Customer> customerList;
         try {
             customerList = customerService.getAllCustomers();
@@ -100,6 +92,7 @@ public class CustomerController {
 
     /**
      * exception validation handler.
+     *
      * @param exception exception
      * @return message
      */
