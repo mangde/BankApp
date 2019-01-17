@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.* COPYRIGHT: Copyright (c) 2018 by Nuance Communications, Inc.
-  ~ Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+  ~ /*
+  ~  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
+  ~  *  Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+  ~  *
+  ~  */
   -->
 
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
@@ -21,10 +24,29 @@
         ]]>
     </entry>
     <entry key="addAccount">
-        <![CDATA[INSERT INTO Account(accTypeId,balance,customerId) VALUES(:accTypeId,:balance,:customerId)]]>
+        <![CDATA[INSERT INTO account(accTypeId,balance,customerId) VALUES(:accTypeId,:balance,:customerId)]]>
     </entry>
     <entry key="getAccTypeId">
         <![CDATA[SELECT accTypeId FROM acctype WHERE accTypeDesc= :type]]>
+    </entry>
+    <entry key="getBalance">
+        <![CDATA[SELECT balance FROM account WHERE accNo = :accNumber]]>
+    </entry>
+    <entry key="depositeAmount">
+        <![CDATA[UPDATE account SET balance=:newBalance WHERE accNo=:accNumber ]]>
+    </entry>
+    <entry key="accountDetail">
+        <![CDATA[SELECT accNo,accTypeId,balance,customerId FROM account WHERE accNo=:accNumber ]]>
+    </entry>
+
+    <entry key="transfer">
+        <![CDATA[INSERT INTO transaction_detail(dateTime,amount,accFrom,accTo,description) VALUES(:dateTime,:amount ,:accFrom,:accTo,:description)]]>
+    </entry>
+    <entry key="updateBalance">
+        <![CDATA[UPDATE account SET balance=:newBalance WHERE accNo=:accNumber ]]>
+    </entry>
+    <entry key="transactionHistory">
+        <![CDATA[SELECT transactionId,dateTime,amount,accFrom,accTo,description FROM transaction_detail WHERE accFrom=:accNumber OR accTo=:accNumber ]]>
     </entry>
 
 </properties>

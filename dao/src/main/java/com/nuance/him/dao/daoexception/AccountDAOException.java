@@ -1,13 +1,14 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+ * Warning: This product is protected by United States copyright law.
+ * Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  */
 package com.nuance.him.dao.daoexception;
 
 /**
  * Custom exception for the query failure.
  */
-public class AccountDAOException extends Exception {
+public class AccountDaoException extends Exception {
 
     private static final String MESSAGE = "";
 
@@ -17,7 +18,7 @@ public class AccountDAOException extends Exception {
      * @param MESSAGE message for the exception
      * @param cause exception
      */
-    public AccountDAOException(String MESSAGE, Throwable cause) {
+    public AccountDaoException(String MESSAGE, Throwable cause) {
         super(MESSAGE, cause);
     }
 
@@ -26,6 +27,6 @@ public class AccountDAOException extends Exception {
      */
     @Override
     public String getMessage() {
-        return MESSAGE;
+        return AccountDaoException.MESSAGE;
     }
 }

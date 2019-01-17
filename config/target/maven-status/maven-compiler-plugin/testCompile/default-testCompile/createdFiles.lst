@@ -1,3 +1,9 @@
 com\nuance\him\config\customer\CustomerDaoConfigTest.class
-com\nuance\him\config\customer\CustomerControllerConfigTest.class
 com\nuance\him\config\customer\CustomerServicesConfigTest.class
+com\nuance\him\config\transaction\TransactionDaoConfigTest.class
+com\nuance\him\config\account\AccountDaoConfigTest.class
+com\nuance\him\config\customer\CustomerControllerConfigTest.class
+com\nuance\him\config\transaction\TransactionServiceConfigTest.class
+com\nuance\him\config\account\AccountServiceConfigTest.class
+com\nuance\him\config\account\AccountControllerConfigTest.class
+com\nuance\him\config\transaction\TransactionControllerConfigTest.class

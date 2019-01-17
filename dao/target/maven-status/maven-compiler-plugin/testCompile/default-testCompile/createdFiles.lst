@@ -1,2 +1,4 @@
-com\nuance\him\dao\customer\BankDatabaseConfigTest.class
-com\nuance\him\dao\customer\CustomerDAOImplTest.class
+com\nuance\him\dao\customer\BankDatabaseTest.class
+com\nuance\him\dao\customer\TransactionDaoImplTest.class
+com\nuance\him\dao\customer\AccountDaoImplTest.class
+com\nuance\him\dao\customer\CustomerDaoImplTest.class

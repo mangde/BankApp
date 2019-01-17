@@ -1,6 +1,7 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+ *  Warning: This product is protected by United States copyright law.
+ *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  *
  */
 package com.nuance.him.controller.test;
@@ -21,36 +22,41 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.nuance.him.controller.customer.CustomerController;
 import com.nuance.him.model.customermodel.Customer;
-import com.nuance.him.service.customer.CustomerService;
+import com.nuance.him.service.test.customer.CustomerService;
 import java.util.List;
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
- * Test Class for {@link CustomerController}
+ * Test Class for {@link CustomerController}.
  */
 @WebAppConfiguration
-@TestPropertySource(value = { "classpath:application.properties" })
+@TestPropertySource("classpath:application.properties")
 @ContextConfiguration(classes = TestControllerConfig.class)
 public class CustomerControllerTest extends AbstractTestNGSpringContextTests {
 
     private static final String BASE_URL = "baseURL";
     private static final String ADD_CUSTOMER = "Customer.addCustomer";
     private static final String SELECT_ALL_CUSTOMER = "Customer.SelectAllCustomer";
-    @Value("${" + BASE_URL + "}")
+    private static final String NAME = "Harsh";
+    private static final String CITY = "Pune";
+    private static final String ADDRESS = "Pune";
+    private static final String PHONE = "9545090850";
+    @Value("${" + CustomerControllerTest.BASE_URL + "}")
     private String bankURL;
     /**
-     * add customer url
+     * add customer query.
      */
-    @Value("${" + ADD_CUSTOMER + "}")
+    @Value("${" + CustomerControllerTest.ADD_CUSTOMER + "}")
     private String getAddCustomer;
-    @Value("${" + SELECT_ALL_CUSTOMER + "}")
+    @Value("${" + CustomerControllerTest.SELECT_ALL_CUSTOMER + "}")
     private String getSelectAllCustomer;
     @Mock
     private CustomerService customerService;
     private MockMvc mockMvc;
     private Customer customer;
-    List<Customer> customers;
+    private List<Customer> customers;
     /**
      * WebApplicationContext to TestNG cases.
      */
@@ -58,7 +64,7 @@ public class CustomerControllerTest extends AbstractTestNGSpringContextTests {
     private WebApplicationContext webApplicationContext;
 
     /**
-     * Initial Setup
+     * Initial Setup.
      */
     @BeforeMethod
     public void setUp() {
@@ -67,27 +73,30 @@ public class CustomerControllerTest extends AbstractTestNGSpringContextTests {
     }
 
     /**
-     * Test {@link CustomerController {@link #ADD_CUSTOMER}}for successful adding a customer
+     * Test {@link CustomerController {@link #ADD_CUSTOMER}}for successful adding a customer.
      *
      * @throws Exception exception
      */
     @Test
     public void testAddCustomer() throws Exception {
-        when(customerService.addCustomer(customer)).thenReturn(1);
-
-        mockMvc.perform(MockMvcRequestBuilders.post(bankURL + getAddCustomer).param("name", "yogesh").param("phone", "954595854").param("address", "pune").param("city", "pune")).andExpect(status().isCreated());
-
+        when(customerService.addCustomer(any(Customer.class))).thenReturn(1);
+        mockMvc.perform(MockMvcRequestBuilders.post(bankURL + getAddCustomer)
+            .param("name", CustomerControllerTest.NAME)
+            .param("phone", CustomerControllerTest.PHONE)
+            .param("address", CustomerControllerTest.ADDRESS)
+            .param("city", CustomerControllerTest.CITY))
+            .andExpect(status().isCreated());
     }
 
     /**
-     * test display customer method
+     * customer display customer method.
      *
      * @throws Exception exception
      */
     @Test
     public void testDisplayCustomers() throws Exception {
         when(customerService.getAllCustomers()).thenReturn(customers);
-
-        this.mockMvc.perform(MockMvcRequestBuilders.get(bankURL + getSelectAllCustomer)).andExpect(status().isOk());
+        mockMvc.perform(MockMvcRequestBuilders.get(bankURL + getSelectAllCustomer))
+            .andExpect(status().isOk());
     }
 }

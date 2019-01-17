@@ -1,85 +1,293 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Surefire suite" duration-ms="1018" started-at="2019-01-11T05:43:09Z" finished-at="2019-01-11T05:43:10Z">
+  <suite name="Surefire suite" duration-ms="1216" started-at="2019-01-17T07:20:51Z" finished-at="2019-01-17T07:20:52Z">
     <groups>
     </groups>
-    <test name="Surefire test" duration-ms="1018" started-at="2019-01-11T05:43:09Z" finished-at="2019-01-11T05:43:10Z">
-      <class name="com.nuance.him.dao.customer.CustomerDAOImplTest">
-        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.nuance.him.dao.customer.CustomerDAOImplTest@58a90037]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="7" started-at="2019-01-11T11:13:09Z" finished-at="2019-01-11T11:13:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- springTestContextBeforeTestClass -->
-        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.nuance.him.dao.customer.CustomerDAOImplTest@58a90037]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="849" started-at="2019-01-11T11:13:09Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2019-01-11T11:13:10Z">
+    <test name="Surefire test" duration-ms="1216" started-at="2019-01-17T07:20:51Z" finished-at="2019-01-17T07:20:52Z">
+      <class name="com.nuance.him.dao.customer.CustomerDaoImplTest">
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.nuance.him.dao.customer.CustomerDaoImplTest@12028586]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="6" started-at="2019-01-17T12:50:52Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2019-01-17T12:50:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextPrepareTestInstance -->
-        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.CustomerDAOImplTest@58a90037]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="35" started-at="2019-01-11T11:13:10Z" finished-at="2019-01-11T11:13:10Z">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.nuance.him.dao.customer.CustomerDaoImplTest@12028586]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.CustomerDaoImplTest@12028586]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="25" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.nuance.him.dao.customer.CustomerDAOImplTest.testAddCustomer() throws java.lang.Exception]]>
+                <![CDATA[public void com.nuance.him.dao.customer.CustomerDaoImplTest.testAddCustomer() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextBeforeTestMethod -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.dao.customer.CustomerDAOImplTest@58a90037]" name="setUp" is-config="true" duration-ms="5" started-at="2019-01-11T11:13:10Z" finished-at="2019-01-11T11:13:10Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.dao.customer.CustomerDaoImplTest@12028586]" name="setUp" is-config="true" duration-ms="2" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testAddCustomer()[pri:0, instance:com.nuance.him.dao.customer.CustomerDAOImplTest@58a90037]" name="testAddCustomer" duration-ms="82" started-at="2019-01-11T11:13:10Z" finished-at="2019-01-11T11:13:10Z">
+        <test-method status="PASS" signature="testAddCustomer()[pri:0, instance:com.nuance.him.dao.customer.CustomerDaoImplTest@12028586]" name="testAddCustomer" duration-ms="2" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddCustomer -->
-        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.CustomerDAOImplTest@58a90037]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="3" started-at="2019-01-11T11:13:10Z" finished-at="2019-01-11T11:13:10Z">
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.CustomerDaoImplTest@12028586]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="2" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.nuance.him.dao.customer.CustomerDAOImplTest.testAddCustomer() throws java.lang.Exception]]>
+                <![CDATA[public void com.nuance.him.dao.customer.CustomerDaoImplTest.testAddCustomer() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextAfterTestMethod -->
-        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.CustomerDAOImplTest@58a90037]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="22" started-at="2019-01-11T11:13:10Z" finished-at="2019-01-11T11:13:10Z">
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.CustomerDaoImplTest@12028586]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="12" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.nuance.him.dao.customer.CustomerDAOImplTest.testDisplayCustomer() throws java.lang.Exception]]>
+                <![CDATA[public void com.nuance.him.dao.customer.CustomerDaoImplTest.testDisplayCustomer() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextBeforeTestMethod -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.dao.customer.CustomerDAOImplTest@58a90037]" name="setUp" is-config="true" duration-ms="0" started-at="2019-01-11T11:13:10Z" finished-at="2019-01-11T11:13:10Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.dao.customer.CustomerDaoImplTest@12028586]" name="setUp" is-config="true" duration-ms="1" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testDisplayCustomer()[pri:0, instance:com.nuance.him.dao.customer.CustomerDAOImplTest@58a90037]" name="testDisplayCustomer" duration-ms="4" started-at="2019-01-11T11:13:10Z" finished-at="2019-01-11T11:13:10Z">
+        <test-method status="PASS" signature="testDisplayCustomer()[pri:0, instance:com.nuance.him.dao.customer.CustomerDaoImplTest@12028586]" name="testDisplayCustomer" duration-ms="3" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDisplayCustomer -->
-        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.CustomerDAOImplTest@58a90037]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2019-01-11T11:13:10Z" finished-at="2019-01-11T11:13:10Z">
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.CustomerDaoImplTest@12028586]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.nuance.him.dao.customer.CustomerDAOImplTest.testDisplayCustomer() throws java.lang.Exception]]>
+                <![CDATA[public void com.nuance.him.dao.customer.CustomerDaoImplTest.testDisplayCustomer() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextAfterTestMethod -->
-        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.nuance.him.dao.customer.CustomerDAOImplTest@58a90037]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2019-01-11T11:13:10Z" finished-at="2019-01-11T11:13:10Z">
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.nuance.him.dao.customer.CustomerDaoImplTest@12028586]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextAfterTestClass -->
-      </class> <!-- com.nuance.him.dao.customer.CustomerDAOImplTest -->
+      </class> <!-- com.nuance.him.dao.customer.CustomerDaoImplTest -->
+      <class name="com.nuance.him.dao.customer.TransactionDaoImplTest">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.nuance.him.dao.customer.TransactionDaoImplTest@2bbaf4f0]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.nuance.him.dao.customer.TransactionDaoImplTest@2bbaf4f0]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="4" started-at="2019-01-17T12:50:52Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.TransactionDaoImplTest@2bbaf4f0]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.dao.customer.TransactionDaoImplTest.testTransactionHistory() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.dao.customer.TransactionDaoImplTest@2bbaf4f0]" name="setUp" is-config="true" duration-ms="2" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testTransactionHistory()[pri:0, instance:com.nuance.him.dao.customer.TransactionDaoImplTest@2bbaf4f0]" name="testTransactionHistory" duration-ms="16" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransactionHistory -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.TransactionDaoImplTest@2bbaf4f0]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.dao.customer.TransactionDaoImplTest.testTransactionHistory() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.dao.customer.TransactionDaoImplTest@2bbaf4f0]" name="setUp" is-config="true" duration-ms="1" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.TransactionDaoImplTest@2bbaf4f0]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.dao.customer.TransactionDaoImplTest.testTransferAmount() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="testTransferAmount()[pri:0, instance:com.nuance.him.dao.customer.TransactionDaoImplTest@2bbaf4f0]" name="testTransferAmount" duration-ms="56" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransferAmount -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.TransactionDaoImplTest@2bbaf4f0]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.dao.customer.TransactionDaoImplTest.testTransferAmount() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.nuance.him.dao.customer.TransactionDaoImplTest@2bbaf4f0]" name="springTestContextAfterTestClass" is-config="true" duration-ms="1" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- com.nuance.him.dao.customer.TransactionDaoImplTest -->
+      <class name="com.nuance.him.dao.customer.AccountDaoImplTest">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="8" started-at="2019-01-17T12:50:51Z" finished-at="2019-01-17T12:50:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="846" started-at="2019-01-17T12:50:51Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="52" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.dao.customer.AccountDaoImplTest.testDeposite() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="setUp" is-config="true" duration-ms="8" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testDeposite()[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="testDeposite" duration-ms="76" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeposite -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="3" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.dao.customer.AccountDaoImplTest.testDeposite() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="22" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.dao.customer.AccountDaoImplTest.testGetAccountDetails() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="setUp" is-config="true" duration-ms="1" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testGetAccountDetails()[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="testGetAccountDetails" duration-ms="5" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAccountDetails -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="2" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.dao.customer.AccountDaoImplTest.testGetAccountDetails() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="18" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.dao.customer.AccountDaoImplTest.testGetBalance() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="testGetBalance()[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="testGetBalance" duration-ms="1" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetBalance -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="setUp" is-config="true" duration-ms="0" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="2" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.dao.customer.AccountDaoImplTest.testGetBalance() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="18" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.dao.customer.AccountDaoImplTest.testOpenAccount() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="testOpenAccount()[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="testOpenAccount" duration-ms="5" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOpenAccount -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="setUp" is-config="true" duration-ms="0" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="2" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nuance.him.dao.customer.AccountDaoImplTest.testOpenAccount() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.nuance.him.dao.customer.AccountDaoImplTest@6e2c9341]" name="springTestContextAfterTestClass" is-config="true" duration-ms="1" started-at="2019-01-17T12:50:52Z" finished-at="2019-01-17T12:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- com.nuance.him.dao.customer.AccountDaoImplTest -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>

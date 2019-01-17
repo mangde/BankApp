@@ -11,8 +11,8 @@
         <entry key="location-2" value="PROJECT_RELATIVE:$PROJECT_DIR$/../../Downloads/escription_checkstyle.xml:escription" />
         <entry key="property-2.samedir" value="" />
         <entry key="scan-before-checkin" value="false" />
-        <entry key="scanscope" value="JavaOnly" />
-        <entry key="suppress-errors" value="false" />
+        <entry key="scanscope" value="JavaOnlyWithTests" />
+        <entry key="suppress-errors" value="true" />
       </map>
     </option>
   </component>

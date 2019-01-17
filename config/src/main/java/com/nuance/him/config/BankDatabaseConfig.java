@@ -1,6 +1,7 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+ *  Warning: This product is protected by United States copyright law.
+ *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  *
  */
 package com.nuance.him.config;
@@ -17,8 +18,11 @@ import org.springframework.transaction.PlatformTransactionManager;
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 
+/**
+ * Database connection configuration.
+ */
 @Configuration
-@PropertySource("classpath:application.yaml")
+@PropertySource("classpath:application.properties")
 public class BankDatabaseConfig {
 
     @Value("${Datasource.url}")
@@ -35,7 +39,7 @@ public class BankDatabaseConfig {
         try {
             // Establish the connection.
             ds = new SQLServerDataSource();
-            ds.setURL(this.url);
+            ds.setURL(url);
             ds.getConnection();
         }
         catch (SQLServerException e) {
@@ -45,7 +49,6 @@ public class BankDatabaseConfig {
     }
 
     /**
-     *
      * @param dataSource instance of dataSource
      * @return bean of {@link NamedParameterJdbcTemplate}
      */
@@ -56,13 +59,12 @@ public class BankDatabaseConfig {
     }
 
     /**
-     * bean for {@link org.springframework.transaction.annotation.Transactional}
+     * bean for {@link org.springframework.transaction.annotation.Transactional}.
+     *
      * @return instance of {@link PlatformTransactionManager}
      */
     @Bean
-    PlatformTransactionManager transactionManager() {
-        return new DataSourceTransactionManager(this.dataSource());
+    public PlatformTransactionManager transactionManager() {
+        return new DataSourceTransactionManager(dataSource());
     }
-
-
 }

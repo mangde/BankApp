@@ -1,7 +1,10 @@
-com\nuance\him\config\accountConfig\AccountServiceConfig.class
 com\nuance\him\config\customerconfig\CustomerDaoConfig.class
-com\nuance\him\config\customerconfig\CustomerControllerConfig.class
-com\nuance\him\config\accountConfig\AccountDAOConfig.class
-com\nuance\him\config\customerconfig\CustomerServiceConfig.class
 com\nuance\him\config\BankDatabaseConfig.class
-com\nuance\him\config\accountConfig\AccountControllerConfig.class
+com\nuance\him\config\transactionConfig\TransactionDaoConfig.class
+com\nuance\him\config\transactionConfig\TransactionControllerConfig.class
+com\nuance\him\config\accountconfig\AccountDaoConfig.class
+com\nuance\him\config\accountconfig\AccountControllerConfig.class
+com\nuance\him\config\customerconfig\CustomerControllerConfig.class
+com\nuance\him\config\accountconfig\AccountServiceConfig.class
+com\nuance\him\config\transactionConfig\TransactionServiceConfig.class
+com\nuance\him\config\customerconfig\CustomerServiceConfig.class

@@ -9,21 +9,57 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Surefire suite</th></tr>
-<tr><td><a href="#t0">Surefire test</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">231</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Surefire test</a></td><td class="num">16</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">458</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">com.nuance.him.service.customer.CustomerServiceImplTest</td><td><a href="#m0">testAddCustomer</a></td><td rowspan="1">1547185393290</td><td rowspan="1">22</td></tr><tr class="passedeven"><td><a href="#m1">testAddCustomerException</a></td><td rowspan="1">1547185393314</td><td rowspan="1">3</td></tr><tr class="passedeven"><td><a href="#m2">testDisplayCustomer</a></td><td rowspan="1">1547185393318</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m3">testDisplayCustomerException</a></td><td rowspan="1">1547185393320</td><td rowspan="1">0</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="8">com.nuance.him.service.test.customer.AccountServiceImplTest</td><td><a href="#m0">testDepositException</a></td><td rowspan="1">1547709655065</td><td rowspan="1">36</td></tr><tr class="passedeven"><td><a href="#m1">testDeposite</a></td><td rowspan="1">1547709655104</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m2">testGetAccountDetail</a></td><td rowspan="1">1547709655105</td><td rowspan="1">2</td></tr><tr class="passedeven"><td><a href="#m3">testGetAccountDetailException</a></td><td rowspan="1">1547709655107</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m4">testGetBalance</a></td><td rowspan="1">1547709655108</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m5">testGetBalanceException</a></td><td rowspan="1">1547709655110</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m6">testOpenAccount</a></td><td rowspan="1">1547709655111</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m7">testOpenAccountException</a></td><td rowspan="1">1547709655112</td><td rowspan="1">0</td></tr><tr class="passedodd"><td rowspan="4">com.nuance.him.service.test.customer.CustomerServiceImplTest</td><td><a href="#m8">testAddCustomer</a></td><td rowspan="1">1547709655122</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m9">testAddCustomerException</a></td><td rowspan="1">1547709655123</td><td rowspan="1">2</td></tr><tr class="passedodd"><td><a href="#m10">testDisplayCustomer</a></td><td rowspan="1">1547709655126</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m11">testDisplayCustomerException</a></td><td rowspan="1">1547709655127</td><td rowspan="1">0</td></tr><tr class="passedeven"><td rowspan="4">com.nuance.him.service.test.customer.TransactionServiceImplTest</td><td><a href="#m12">testTransactionHistory</a></td><td rowspan="1">1547709655135</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m13">testTransactionHistoryException</a></td><td rowspan="1">1547709655136</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m14">testTransferAmount</a></td><td rowspan="1">1547709655143</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m15">testTransferAmountException</a></td><td rowspan="1">1547709655144</td><td rowspan="1">0</td></tr></tbody>
 </table>
-<h2>Surefire test</h2><h3 id="m0">com.nuance.him.service.customer.CustomerServiceImplTest#testAddCustomer</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.nuance.him.service.customer.CustomerServiceImplTest#testAddCustomerException</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">com.nuance.him.service.serviceexception.CustomerServiceException: 
-	at com.nuance.him.service.customer.CustomerServiceImpl.addCustomer(CustomerServiceImpl.java:33)
-	at com.nuance.him.service.customer.CustomerServiceImplTest.testAddCustomerException(CustomerServiceImplTest.java:45)
+<h2>Surefire test</h2><h3 id="m0">com.nuance.him.service.test.customer.AccountServiceImplTest#testDepositException</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">com.nuance.him.service.test.serviceexception.AccountServiceException: 
+	at com.nuance.him.service.test.account.AccountServiceImpl.depositeAmount(AccountServiceImpl.java:47)
+	at com.nuance.him.service.test.customer.AccountServiceImplTest.testDepositException(AccountServiceImplTest.java:138)
+Caused by: com.nuance.him.dao.daoexception.AccountDaoException: 
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.nuance.him.service.test.customer.AccountServiceImplTest#testDeposite</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.nuance.him.service.test.customer.AccountServiceImplTest#testGetAccountDetail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.nuance.him.service.test.customer.AccountServiceImplTest#testGetAccountDetailException</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">com.nuance.him.service.test.serviceexception.AccountServiceException: 
+	at com.nuance.him.service.test.account.AccountServiceImpl.getAccountDetail(AccountServiceImpl.java:67)
+	at com.nuance.him.service.test.customer.AccountServiceImplTest.testGetAccountDetailException(AccountServiceImplTest.java:169)
+Caused by: com.nuance.him.dao.daoexception.AccountDaoException: 
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.nuance.him.service.test.customer.AccountServiceImplTest#testGetBalance</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.nuance.him.service.test.customer.AccountServiceImplTest#testGetBalanceException</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">com.nuance.him.service.test.serviceexception.AccountServiceException: 
+	at com.nuance.him.service.test.account.AccountServiceImpl.getCurrentBalance(AccountServiceImpl.java:57)
+	at com.nuance.him.service.test.customer.AccountServiceImplTest.testGetBalanceException(AccountServiceImplTest.java:107)
+Caused by: com.nuance.him.dao.daoexception.AccountDaoException: 
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.nuance.him.service.test.customer.AccountServiceImplTest#testOpenAccount</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.nuance.him.service.test.customer.AccountServiceImplTest#testOpenAccountException</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">com.nuance.him.service.test.serviceexception.AccountServiceException: 
+	at com.nuance.him.service.test.account.AccountServiceImpl.addAccount(AccountServiceImpl.java:37)
+	at com.nuance.him.service.test.customer.AccountServiceImplTest.testOpenAccountException(AccountServiceImplTest.java:76)
+Caused by: com.nuance.him.dao.daoexception.AccountDaoException: 
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">com.nuance.him.service.test.customer.CustomerServiceImplTest#testAddCustomer</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">com.nuance.him.service.test.customer.CustomerServiceImplTest#testAddCustomerException</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">com.nuance.him.service.test.serviceexception.CustomerServiceException: 
+	at com.nuance.him.service.test.customer.CustomerServiceImpl.addCustomer(CustomerServiceImpl.java:37)
+	at com.nuance.him.service.test.customer.CustomerServiceImplTest.testAddCustomerException(CustomerServiceImplTest.java:73)
 Caused by: com.nuance.him.dao.daoexception.CustomerDaoException: 
 ... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.nuance.him.service.customer.CustomerServiceImplTest#testDisplayCustomer</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.nuance.him.service.customer.CustomerServiceImplTest#testDisplayCustomerException</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">com.nuance.him.service.serviceexception.CustomerServiceException: 
-	at com.nuance.him.service.customer.CustomerServiceImpl.getAllCustomers(CustomerServiceImpl.java:41)
-	at com.nuance.him.service.customer.CustomerServiceImplTest.testDisplayCustomerException(CustomerServiceImplTest.java:65)
+<h3 id="m10">com.nuance.him.service.test.customer.CustomerServiceImplTest#testDisplayCustomer</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">com.nuance.him.service.test.customer.CustomerServiceImplTest#testDisplayCustomerException</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">com.nuance.him.service.test.serviceexception.CustomerServiceException: 
+	at com.nuance.him.service.test.customer.CustomerServiceImpl.getAllCustomers(CustomerServiceImpl.java:47)
+	at com.nuance.him.service.test.customer.CustomerServiceImplTest.testDisplayCustomerException(CustomerServiceImplTest.java:103)
 Caused by: com.nuance.him.dao.daoexception.CustomerDaoException: 
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">com.nuance.him.service.test.customer.TransactionServiceImplTest#testTransactionHistory</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">com.nuance.him.service.test.customer.TransactionServiceImplTest#testTransactionHistoryException</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">com.nuance.him.service.test.serviceexception.TransactionServiceException: 
+	at com.nuance.him.service.test.transaction.TransactionServicesImpl.getTransactionHistory(TransactionServicesImpl.java:52)
+	at com.nuance.him.service.test.customer.TransactionServiceImplTest.testTransactionHistoryException(TransactionServiceImplTest.java:109)
+Caused by: com.nuance.him.dao.daoexception.TransactionDaoException: 
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">com.nuance.him.service.test.customer.TransactionServiceImplTest#testTransferAmount</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">com.nuance.him.service.test.customer.TransactionServiceImplTest#testTransferAmountException</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">com.nuance.him.service.test.serviceexception.TransactionServiceException: 
+	at com.nuance.him.service.test.transaction.TransactionServicesImpl.transferAmount(TransactionServicesImpl.java:42)
+	at com.nuance.him.service.test.customer.TransactionServiceImplTest.testTransferAmountException(TransactionServiceImplTest.java:78)
+Caused by: com.nuance.him.dao.daoexception.TransactionDaoException: 
 ... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

@@ -1,37 +1,58 @@
 /*
  *
  *  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  *  Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+ *  *  Warning: This product is protected by United States copyright law.
+ *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  *  *
  *
  */
-
 package com.nuance.him.model.accountmodel;
 
 import javax.persistence.Id;
 
+/**
+ * AccountType Class.
+ */
 public class AccountType {
 
     @Id
-    private int accTypeId;
-    private String accTypeDesc;
+    private final int accTypeId;
+    private final String accTypeDesc;
 
-    public AccountType() {
+    /**
+     * Constructor of class {@link AccountType}.
+     *
+     * @param accTypeId id
+     * @param accTypeDesc description
+     */
+    public AccountType(int accTypeId, String accTypeDesc) {
         this.accTypeId = accTypeId;
         this.accTypeDesc = accTypeDesc;
     }
-public String getAccTypeDesc(){
+
+    /**
+     * get accountDescription.
+     *
+     * @return accountDescription
+     */
+    public String getAccTypeDesc() {
         return accTypeDesc;
-}
-    public void setAccTypeDesc(String accTypeDesc) {
-        this.accTypeDesc = accTypeDesc;
     }
 
+    /**
+     * get accountTypeId.
+     *
+     * @return accountTypeId
+     */
     public int getAccTypeId() {
-        return this.accTypeId;
+        return accTypeId;
     }
 
-    public void setAccTypeId(int accTypeId) {
-        this.accTypeId = accTypeId;
+    @Override
+    public String toString() {
+        return "AccountType{" +
+            "accTypeId=" + accTypeId +
+            ", accTypeDesc='" + accTypeDesc + '\'' +
+            '}';
     }
 }

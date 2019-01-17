@@ -1,66 +1,102 @@
 /*
  * COPYRIGHT: Copyright (c) 2018 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+ *  Warning: This product is protected by United States copyright law.
+ *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  *
  */
 package com.nuance.him.model.customermodel;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
+/**
+ * Customer Model class.
+ */
 public class Customer {
 
-    @NotNull
-    @Size(min=5, message="Name should have atleast 5 characters")
     private final String name;
-    @Size(min=10,max=10,message = "phone should contain 10 digit number")
-    @Pattern(regexp="(^$|[0-9]{10})")
     private final long phone;
-    @Size(min=5, message="ADDRESS should have atleast 5 characters")
     private final String address;
-    @Size(min=5, message="CityName should have atleast 5 characters")
     private final String city;
     @Id
     @GeneratedValue
     private int id;
 
+    /**
+     * Customer Constructor.
+     *
+     * @param name name of customer
+     * @param phone phone
+     * @param address address
+     * @param city city
+     */
     public Customer(String name, Long phone, String address, String city) {
         this.name = name;
-        this.phone = phone;
+        this.phone = phone.longValue();
         this.address = address;
         this.city = city;
     }
 
-
+    /**
+     * getCustomerId.
+     *
+     * @return customerId
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * setCustomerId.
+     *
+     * @param id customerId
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * get CustomerName.
+     *
+     * @return CustomerName
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * get phone.
+     *
+     * @return phone
+     */
     public long getPhone() {
         return phone;
     }
 
+    /**
+     * get Customer address.
+     *
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
 
+    /**
+     * get city.
+     *
+     * @return city
+     */
     public String getCity() {
         return city;
     }
 
     @Override
     public String toString() {
-        return "Customer{" + "id=" + this.id + ", name='" + this.name + '\'' + ", phone=" + this.phone + ", address='" + this.address + '\'' + ", city='" + this.city + '\'' + '}';
+        return "Customer{" + "id=" + id +
+            ", name='" + name + '\'' +
+            ", phone=" + phone +
+            ", address='" + address + '\'' +
+            ", city='" + city + '\'' + '}';
     }
 }

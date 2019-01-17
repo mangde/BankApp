@@ -1,2 +1,4 @@
 com\nuance\him\controller\test\CustomerControllerTest.class
 com\nuance\him\controller\test\TestControllerConfig.class
+com\nuance\him\controller\test\AccountControllerTest.class
+com\nuance\him\controller\test\TransactionControllerTest.class

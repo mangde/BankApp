@@ -1,74 +1,110 @@
 /*
  * COPYRIGHT: Copyright (c) 2019 by Nuance Communications, Inc.
- *  Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+ *  Warning: This product is protected by United States copyright law.
+ *  Unauthorized use or duplication of this software, in whole or in part, is prohibited.
  *
  */
 package com.nuance.him.dao.account;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
-import com.nuance.him.dao.daoexception.AccountDAOException;
+import com.nuance.him.dao.daoexception.AccountDaoException;
 import com.nuance.him.model.accountmodel.Account;
-import com.nuance.him.model.accountmodel.AccountType;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
-public class AccountDAOImpl implements AccountDAO {
+/**
+ * Implementation of interface AccountDao.
+ */
+public class AccountDaoImpl implements AccountDao {
 
-    private static final Logger log = LoggerFactory.getLogger(AccountDAOImpl.class);
-    private final String ADD_ACCOOUNT;
-    private final String GET_ACCTYPE_ID;
+    private final String ADD_ACCOUNT;
+    private final String GET_ACC_TYPE_ID;
+    private final String GET_BALANCE;
+    private final String DEPOSITE_AMOUNT;
+    private final String GET_ACC_DETAIL;
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    public AccountDAOImpl(NamedParameterJdbcTemplate jdbcTemplate, String getAddAccoount, String getGetAcctypeId) {
-        this.namedParameterJdbcTemplate = jdbcTemplate;
-        ADD_ACCOOUNT = getAddAccoount;
-        GET_ACCTYPE_ID = getGetAcctypeId;
+    /**
+     * constructor of class {@link AccountDaoImpl}.
+     *
+     * @param jdbcTemplate {@link NamedParameterJdbcTemplate}
+     * @param getAddAccount query for addAccount
+     * @param getGetAccTypeId query for getAccountTypeId form account type
+     * @param getBalance query for check current available balance
+     * @param getDeposite query for deposite amount
+     * @param accountDetail query for getAccountDetails
+     */
+    public AccountDaoImpl(NamedParameterJdbcTemplate jdbcTemplate, String getAddAccount, String getGetAccTypeId, String getBalance, String getDeposite, String accountDetail) {
+        namedParameterJdbcTemplate = jdbcTemplate;
+        ADD_ACCOUNT = getAddAccount;
+        GET_ACC_TYPE_ID = getGetAccTypeId;
+        GET_BALANCE = getBalance;
+        DEPOSITE_AMOUNT = getDeposite;
+        GET_ACC_DETAIL = accountDetail;
     }
 
     @Override
-    public int addAccount(Account account) throws AccountDAOException {
-        log.info("inside ac dao");
+    public int addAccount(Account account) throws AccountDaoException {
         try {
             KeyHolder holder = new GeneratedKeyHolder();
-            MapSqlParameterSource paramAccTypeId = new MapSqlParameterSource();
-            SqlParameterSource namedParameters = new MapSqlParameterSource("type", account.getType());
-            // namedParameterJdbcTemplate.query(GET_ACCTYPE_ID,new AccountTypeMapper());
-           // paramAccTypeId.addValue("type", account.getType());
-
-         /*  List<AccountType> accountTypes = namedParameterJdbcTemplate.query(GET_ACCTYPE_ID,new MapSqlParameterSource("type", account.getType()), (resultSet, i) -> {
-                    return toAccountType(resultSet);
-                })*/;
-
-
-            int acctypeId = namedParameterJdbcTemplate.queryForObject(GET_ACCTYPE_ID, namedParameters, Integer.class);
-            log.info("getting accTypeId ac dao");
-
-            MapSqlParameterSource paramSourceAcc = new MapSqlParameterSource();
-            paramSourceAcc.addValue("accTypeId", acctypeId);
-            paramSourceAcc.addValue("balance", account.getBalance());
-            paramSourceAcc.addValue("customerId", account.getCustomerId());
-            namedParameterJdbcTemplate.update(ADD_ACCOOUNT, paramSourceAcc, holder);
+            SqlParameterSource getAccTypeId = new MapSqlParameterSource("type", account.getType());
+            int accTypeId = namedParameterJdbcTemplate.queryForObject(GET_ACC_TYPE_ID, getAccTypeId, Integer.class).intValue();
+            MapSqlParameterSource paramSourceAcc = mapParameterSource(account, accTypeId);
+            namedParameterJdbcTemplate.update(ADD_ACCOUNT, paramSourceAcc, holder);
             return holder.getKey().intValue();
         }
         catch (DataAccessException e) {
-            log.error("error in Add ACCDAO ", e.getCause());
-            throw new AccountDAOException("Failed to add Account ", e);
+            throw new AccountDaoException("Failed to add Account ", e);
         }
     }
 
-    private AccountType toAccountType(ResultSet resultSet)throws SQLException {
-        AccountType accountType= new AccountType();
-        accountType.setAccTypeId(resultSet.getInt(1));
-        accountType.setAccTypeDesc(resultSet.getString(2));
-        return accountType;
+    @Override
+    public double depositeAmount(int accountNumber, double amount) throws AccountDaoException {
+        double newBalance = amount + getCurrentBalance(accountNumber);
+        MapSqlParameterSource paramDeposite = new MapSqlParameterSource();
+        paramDeposite.addValue("accNumber", accountNumber);
+        paramDeposite.addValue("newBalance", newBalance);
+        namedParameterJdbcTemplate.update(DEPOSITE_AMOUNT, paramDeposite);
+        return newBalance;
     }
 
+    @Override
+    public double getCurrentBalance(int accountNumber) throws AccountDaoException {
+        try {
+            SqlParameterSource namedParameters = new MapSqlParameterSource("accNumber", accountNumber);
+            return namedParameterJdbcTemplate.queryForObject(GET_BALANCE, namedParameters, Double.class);
+        }
+        catch (DataAccessException e) {
+            throw new AccountDaoException("failed to getCurrent balance", e);
+        }
+    }
 
+    @Override
+    public Account getAccountDetail(int accountNumber) throws AccountDaoException {
+        try {
+            SqlParameterSource namedParameters = new MapSqlParameterSource("accNumber", accountNumber);
+            return namedParameterJdbcTemplate.queryForObject(GET_ACC_DETAIL, namedParameters, new AccountMapper());
+        }
+        catch (DataAccessException e) {
+            throw new AccountDaoException("failed to getAccountDetails ", e);
+        }
+    }
+
+    /**
+     * method  map sql parameter foe add account.
+     *
+     * @param account instance of class {@link Account}
+     * @param Id accountTypeId
+     * @return paramSource
+     */
+    private MapSqlParameterSource mapParameterSource(Account account, int Id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("accTypeId", Id);
+        paramSource.addValue("balance", account.getBalance());
+        paramSource.addValue("customerId", account.getCustomerId());
+        return paramSource;
+    }
 }
