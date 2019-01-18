@@ -6,14 +6,11 @@
         <option value="activate" />
         <option value="noActionIfCompileErrors" />
         <option value="organizeImports" />
-        <option value="reformat" />
-        <option value="compile" />
+        <option value="fieldCanBeFinal" />
         <option value="localCanBeFinal" />
         <option value="missingOverrideAnnotation" />
         <option value="useBlocks" />
         <option value="unnecessaryThis" />
-        <option value="finalPrivateMethod" />
-        <option value="unnecessaryFinalOnLocalVariableOrParameter" />
         <option value="suppressAnnotation" />
         <option value="unnecessarySemicolon" />
       </set>

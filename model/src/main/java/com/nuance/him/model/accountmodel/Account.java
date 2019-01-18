@@ -26,7 +26,7 @@ public class Account {
      * @param balance balance
      * @param customerId customerID
      */
-    public Account(String type, double balance, int customerId) {
+    public Account( final String type, final double balance, final int customerId) {
         this.type = type;
         this.balance = balance;
         this.customerId = customerId;
@@ -64,7 +64,7 @@ public class Account {
      *
      * @param accountNo accountNumber
      */
-    public void setAccountNo(int accountNo) {
+    public void setAccountNo(final int accountNo) {
         this.accountNo = accountNo;
     }
 

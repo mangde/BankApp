@@ -17,7 +17,7 @@ public class AccountDaoException extends Exception {
      * @param MESSAGE message for the exception
      * @param cause exception
      */
-    public AccountDaoException(String MESSAGE, Throwable cause) {
+    public AccountDaoException( final String MESSAGE, final Throwable cause) {
         super(MESSAGE, cause);
     }
 

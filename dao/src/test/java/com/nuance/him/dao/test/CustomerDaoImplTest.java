@@ -64,7 +64,7 @@ public class CustomerDaoImplTest extends AbstractTransactionalTestNGSpringContex
     @Transactional
     public void testAddCustomer() throws Exception {
         assertNotNull(customerDao);
-        int customerId = customerDao.addCustomer(customer);
+        final int customerId = customerDao.addCustomer(customer);
         assertNotEquals(0, customerId);
     }
 
@@ -77,7 +77,7 @@ public class CustomerDaoImplTest extends AbstractTransactionalTestNGSpringContex
     @Transactional
     public void testDisplayCustomer() throws Exception {
         assertNotNull(customerDao);
-        List<Customer> customers = customerDao.getAllCustomers();
+        final List<Customer> customers = customerDao.getAllCustomers();
         assertNotNull(customers, "customer list Should Not null");
     }
 }

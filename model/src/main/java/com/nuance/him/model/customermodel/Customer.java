@@ -28,7 +28,7 @@ public class Customer {
      * @param address address
      * @param city city
      */
-    public Customer(String name, Long phone, String address, String city) {
+    public Customer( final String name, final Long phone, final String address, final String city) {
         this.name = name;
         this.phone = phone;
         this.address = address;
@@ -49,7 +49,7 @@ public class Customer {
      *
      * @param id customerId
      */
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 

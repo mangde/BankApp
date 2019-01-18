@@ -17,7 +17,7 @@ public class TransferDaoException extends Exception {
      * @param MESSAGE message for the exception
      * @param cause exception
      */
-    public TransferDaoException(String MESSAGE, Throwable cause) {
+    public TransferDaoException(final String MESSAGE, final Throwable cause) {
         super(MESSAGE, cause);
     }
 

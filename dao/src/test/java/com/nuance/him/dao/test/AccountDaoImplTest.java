@@ -37,10 +37,10 @@ public class AccountDaoImplTest extends AbstractTransactionalTestNGSpringContext
     private static final int CUSTOMER_ID = 1;
     private static final int ACCOUNT_NUMBER = 3;
     private static final double AMOUNT = 500;
-    private final String ACCOUNT_TYPE_ID = "getAccTypeId";
+    private final String ACC_TYPE_ID = "getAccTypeId";
     @Value("${" + OPEN_ACCOUNT + "}")
     private String getOpenAccount;
-    @Value("${" + ACCOUNT_TYPE_ID + "}")
+    @Value("${" + ACC_TYPE_ID + "}")
     private String getAccType;
     @Value("${" + GET_BALANCE + "}")
     private String getGetBalance;
@@ -73,7 +73,7 @@ public class AccountDaoImplTest extends AbstractTransactionalTestNGSpringContext
     @Transactional
     public void testOpenAccount() throws Exception {
         assertNotNull(accountDAO);
-        int accId = accountDAO.addAccount(account);
+        final int accId = accountDAO.addAccount(account);
         assertNotEquals(0, accId);
     }
 
@@ -86,7 +86,7 @@ public class AccountDaoImplTest extends AbstractTransactionalTestNGSpringContext
     @Transactional
     public void testGetBalance() throws Exception {
         assertNotNull(accountDAO);
-        double balance = accountDAO.getCurrentBalance(ACCOUNT_NUMBER);
+        final double balance = accountDAO.getCurrentBalance(ACCOUNT_NUMBER);
         assertNotNull(balance);
     }
 
@@ -99,7 +99,7 @@ public class AccountDaoImplTest extends AbstractTransactionalTestNGSpringContext
     @Transactional
     public void testDeposite() throws Exception {
         assertNotNull(accountDAO);
-        double balance = accountDAO.depositeAmount(ACCOUNT_NUMBER, AMOUNT);
+        final double balance = accountDAO.depositeAmount(ACCOUNT_NUMBER, AMOUNT);
         assertNotEquals(0, balance);
     }
 
@@ -112,7 +112,7 @@ public class AccountDaoImplTest extends AbstractTransactionalTestNGSpringContext
     @Transactional
     public void testGetAccountDetails() throws Exception {
         assertNotNull(accountDAO);
-        Account account = accountDAO.getAccountDetail(ACCOUNT_NUMBER);
+        final Account account = accountDAO.getAccountDetail(ACCOUNT_NUMBER);
         assertNotNull(account);
     }
 
@@ -125,7 +125,7 @@ public class AccountDaoImplTest extends AbstractTransactionalTestNGSpringContext
     @Transactional
     public void testWithDrawAmount() throws Exception {
         assertNotNull(accountDAO);
-        double balance = accountDAO.withDrawAmount(ACCOUNT_NUMBER, AMOUNT);
+        final double balance = accountDAO.withDrawAmount(ACCOUNT_NUMBER, AMOUNT);
         assertNotNull(balance);
     }
 }

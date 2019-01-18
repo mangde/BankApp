@@ -15,8 +15,8 @@ import java.sql.SQLException;
 public class TransactionMapper implements RowMapper<TransferAmount> {
 
     @Override
-    public TransferAmount mapRow(ResultSet resultSet, int i) throws SQLException {
-        TransferAmount transferAmount = new
+    public TransferAmount mapRow(final ResultSet resultSet, final int i) throws SQLException {
+        final TransferAmount transferAmount = new
             TransferAmount(resultSet.getInt("accFrom"), resultSet.getInt("accTo"),
             resultSet.getDouble("amount"),
             resultSet.getString("description"));

@@ -41,7 +41,7 @@ public class CustomerController {
      *
      * @param customerService instance of {@link CustomerService}
      */
-    public CustomerController(CustomerService customerService) {
+    public CustomerController(final CustomerService customerService) {
         this.customerService = customerService;
     }
 
@@ -54,21 +54,21 @@ public class CustomerController {
      * @param phone mobile
      * @return new generated CustomerId
      */
-    @RequestMapping(value = CustomerController.ADD_CUSTOMER, method = RequestMethod.POST)
+    @RequestMapping(value = ADD_CUSTOMER, method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<Customer> addNewCustomer(
-        @RequestParam("name") @Pattern(regexp = "[a-z A-z]+", message = "Name should contain Alphabets only") String name,
-        @RequestParam("address") String address,
-        @RequestParam("city") @Pattern(regexp = "[a-z A-z]+", message = "City should contain Alphabets only") String city,
-        @RequestParam("phone") @Pattern(regexp = "(^$|[0-9]{10})", message = "Phone should 10 digits only") String phone) {
+        @RequestParam("name") @Pattern(regexp = "[a-z A-z]+", message = "Name should contain Alphabets only") final String name,
+        @RequestParam("address") final String address,
+        @RequestParam("city") @Pattern(regexp = "[a-z A-z]+", message = "City should contain Alphabets only") final String city,
+        @RequestParam("phone") @Pattern(regexp = "(^$|[0-9]{10})", message = "Phone should 10 digits only") final String phone) {
         try {
-            int customerId = customerService.addCustomer(new Customer(name, Long.parseLong(phone), address, city));
+            final int customerId = customerService.addCustomer(new Customer(name, Long.parseLong(phone), address, city));
             return new ResponseEntity("Customer is registered successfully\n" + " customerID: " + customerId, HttpStatus.CREATED);
         }
-        catch (NumberFormatException nfe) {
+        catch (final NumberFormatException nfe) {
             return new ResponseEntity(new CustomErrorType(nfe.getCause().getMessage()), HttpStatus.BAD_REQUEST);
         }
-        catch (CustomerServiceException e) {
+        catch (final CustomerServiceException customerServiceException) {
             return new ResponseEntity(new CustomErrorType("Error in  Add customer"), HttpStatus.EXPECTATION_FAILED);
         }
     }
@@ -78,14 +78,14 @@ public class CustomerController {
      *
      * @return all customer details
      */
-    @RequestMapping(value = CustomerController.DISPLAY_CUSTOMERS, method = RequestMethod.GET)
+    @RequestMapping(value = DISPLAY_CUSTOMERS, method = RequestMethod.GET)
     public ResponseEntity<Customer> displayCustomers() {
-        List<Customer> customerList;
+        final List<Customer> customerList;
         try {
             customerList = customerService.getAllCustomers();
         }
-        catch (CustomerServiceException e) {
-            return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
+        catch (final CustomerServiceException customerServiceException) {
+            return new ResponseEntity(customerServiceException.getMessage(), HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity(customerList, HttpStatus.OK);
     }
@@ -98,10 +98,10 @@ public class CustomerController {
      */
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String handle(ConstraintViolationException exception) {
+    public String handle(final ConstraintViolationException exception) {
         String message = "";
-        Set<ConstraintViolation<?>> violations = exception.getConstraintViolations();
-        for (ConstraintViolation<?> violation : violations) {
+        final Set<ConstraintViolation<?>> violations = exception.getConstraintViolations();
+        for (final ConstraintViolation<?> violation : violations) {
             message += violation.getMessage().concat(";");
         }
         return message;

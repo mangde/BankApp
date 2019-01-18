@@ -21,7 +21,7 @@ public class AccountType {
      * @param accTypeId id
      * @param accTypeDesc description
      */
-    public AccountType(int accTypeId, String accTypeDesc) {
+    public AccountType(final int accTypeId, final String accTypeDesc) {
         this.accTypeId = accTypeId;
         this.accTypeDesc = accTypeDesc;
     }

@@ -1,4 +1,0 @@
-com\nuance\him\controller\customer\CustomerController.class
-com\nuance\him\controller\transaction\TransferAmountController.class
-com\nuance\him\controller\account\AccountController.class
-com\nuance\him\controller\exception\CustomErrorType.class

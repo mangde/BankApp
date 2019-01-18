@@ -9,7 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.nuance.him.config.transactionConfig.TransferAmountDaoConfig;
+import com.nuance.him.config.transactionconfig.TransferAmountDaoConfig;
 import com.nuance.him.dao.transaction.TransferDao;
 
 /**

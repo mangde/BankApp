@@ -46,7 +46,7 @@ public class AccountController {
      *
      * @param accountService instance of {@link AccountService}
      */
-    public AccountController(AccountService accountService) {
+    public AccountController(final AccountService accountService) {
         this.accountService = accountService;
     }
 
@@ -58,19 +58,17 @@ public class AccountController {
      * @param customerId customer id
      * @return AccountId with status CREATED.
      */
-    @RequestMapping(value = AccountController.OPEN_ACCOUNT, method = RequestMethod.POST)
+    @RequestMapping(value = OPEN_ACCOUNT, method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<Account> addNewAccount(@RequestParam("type") @NotEmpty @Pattern(regexp = "[a-z A-z]+", message = "AccountType should contain Alphabets only") String type,
-        @RequestParam("balance") @Digits(integer = 6, fraction = 2, message = "wrong balance inputs") double balance,
-        @RequestParam("customerId") @Min(value = 0, message = "customer Id Should not empty") int customerId) {
+    public ResponseEntity<Account> addNewAccount(@RequestParam("type") @NotEmpty @Pattern(regexp = "[a-z A-z]+", message = "AccountType should contain Alphabets only") final String type,
+        @RequestParam("balance") @Digits(integer = 6, fraction = 2, message = "wrong balance inputs") final double balance,
+        @RequestParam("customerId") @Min(value = 0, message = "customer Id Should not empty") final int customerId) {
         try {
-            int accountId = accountService.addAccount(new Account(type, balance, customerId));
-            return new ResponseEntity("Customer Account  is Open successfully\n customer Account ID: "
-                + accountId, HttpStatus.CREATED);
+            final int accountId = accountService.addAccount(new Account(type, balance, customerId));
+            return new ResponseEntity("Customer Account  is Open successfully\n customer Account ID: " + accountId, HttpStatus.CREATED);
         }
-        catch (AccountServiceException e) {
-            return new ResponseEntity(new CustomErrorType("Error in  Add customer Account "),
-                HttpStatus.EXPECTATION_FAILED);
+        catch (final AccountServiceException accountServiceException) {
+            return new ResponseEntity(new CustomErrorType("Error in  Add customer Account "), HttpStatus.EXPECTATION_FAILED);
         }
     }
 
@@ -82,15 +80,13 @@ public class AccountController {
      */
     @RequestMapping(value = GET_BALANCE, method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<Double> getCurrentBalance(@RequestParam("accNumber") int accNumber) {
+    public ResponseEntity<Double> getCurrentBalance(@RequestParam("accNumber") final int accNumber) {
         try {
-            double currentbalance = accountService.getCurrentBalance(accNumber);
-            return new ResponseEntity("Current Available Balance is : "
-                + currentbalance, HttpStatus.OK);
+            final double currentBalance = accountService.getCurrentBalance(accNumber);
+            return new ResponseEntity("Current Available Balance is : " + currentBalance, HttpStatus.OK);
         }
-        catch (AccountServiceException e) {
-            return new ResponseEntity(new CustomErrorType("current balance exception"),
-                HttpStatus.SERVICE_UNAVAILABLE);
+        catch (final AccountServiceException accountServiceException) {
+            return new ResponseEntity(new CustomErrorType("current balance exception"), HttpStatus.SERVICE_UNAVAILABLE);
         }
     }
 
@@ -103,14 +99,13 @@ public class AccountController {
      */
     @RequestMapping(value = DEPOSITE_AMOUNT, method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<Account> deposite(@RequestParam("accNumber") int accNumber, @RequestParam("amount") @Digits(integer = 6, fraction = 2, message = "wrong balance inputs") double amount) {
+    public ResponseEntity<Account> deposite(@RequestParam("accNumber") final int accNumber, @RequestParam("amount") @Digits(integer = 6, fraction = 2, message = "wrong balance inputs") final double amount) {
         try {
-            double newBalance = accountService.depositeAmount(accNumber, amount);
+            final double newBalance = accountService.depositeAmount(accNumber, amount);
             return new ResponseEntity("Amount deposited successfully \n Current Available Balance is : " + newBalance, HttpStatus.OK);
         }
-        catch (AccountServiceException e) {
-            return new ResponseEntity(new CustomErrorType("Failed to Deposite balance "),
-                HttpStatus.SERVICE_UNAVAILABLE);
+        catch (final AccountServiceException accountServiceException) {
+            return new ResponseEntity(new CustomErrorType("Failed to Deposite balance "), HttpStatus.SERVICE_UNAVAILABLE);
         }
     }
 
@@ -122,14 +117,13 @@ public class AccountController {
      */
     @RequestMapping(value = ACCOUNT_DETAILS, method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public ResponseEntity<Account> getAccountDetails(@RequestParam("accNumber") int accNumber) {
+    public ResponseEntity<Account> getAccountDetails(@RequestParam("accNumber") final int accNumber) {
         try {
-            Account account = accountService.getAccountDetail(accNumber);
+            final Account account = accountService.getAccountDetail(accNumber);
             return new ResponseEntity("Account Details : " + account, HttpStatus.OK);
         }
-        catch (AccountServiceException e) {
-            return new ResponseEntity(new CustomErrorType("Account Not Found"),
-                HttpStatus.NOT_FOUND);
+        catch (final AccountServiceException accountServiceException) {
+            return new ResponseEntity(new CustomErrorType("Account Not Found"), HttpStatus.NOT_FOUND);
         }
     }
 
@@ -142,14 +136,13 @@ public class AccountController {
      */
     @RequestMapping(value = WITHDRAW_AMOUNT, method = RequestMethod.PUT)
     @ResponseBody
-    public ResponseEntity<Double> withDrawAmount(@RequestParam("accNumber") int accNumber, @RequestParam("amount") @Digits(integer = 6, fraction = 2, message = "wrong balance inputs") double amount) {
+    public ResponseEntity<Double> withDrawAmount(@RequestParam("accNumber") final int accNumber, @RequestParam("amount") @Digits(integer = 6, fraction = 2, message = "wrong balance inputs") final double amount) {
         try {
-            double currentAvailableBalance = accountService.withDrawAmount(accNumber, amount);
+            final double currentAvailableBalance = accountService.withDrawAmount(accNumber, amount);
             return new ResponseEntity("Amount withDraw successfully " + amount + " \n Current Available Balance is : " + currentAvailableBalance, HttpStatus.OK);
         }
-        catch (AccountServiceException e) {
-            return new ResponseEntity(new CustomErrorType("Failed to Deposite balance "),
-                HttpStatus.SERVICE_UNAVAILABLE);
+        catch (final AccountServiceException accountServiceException) {
+            return new ResponseEntity(new CustomErrorType("Failed to Deposite balance "), HttpStatus.SERVICE_UNAVAILABLE);
         }
     }
 
@@ -161,10 +154,10 @@ public class AccountController {
      */
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String handle(ConstraintViolationException exception) {
+    public String handle(final ConstraintViolationException exception) {
         String message = "";
-        Set<ConstraintViolation<?>> violations = exception.getConstraintViolations();
-        for (ConstraintViolation<?> violation : violations) {
+        final Set<ConstraintViolation<?>> violations = exception.getConstraintViolations();
+        for (final ConstraintViolation<?> violation : violations) {
             message += violation.getMessage().concat(";");
         }
         return message;

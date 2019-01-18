@@ -23,8 +23,8 @@ public class CustomerMapper implements RowMapper<Customer> {
      * @throws SQLException SQLException
      */
     @Override
-    public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
-        Customer customer = new Customer(rs.getString("name"), rs.getLong("phone"),
+    public Customer mapRow(final ResultSet rs, final int rowNum) throws SQLException {
+        final Customer customer = new Customer(rs.getString("name"), rs.getLong("phone"),
             rs.getString("address1"), rs.getString("city"));
         customer.setId(rs.getInt("customerId"));
         return customer;

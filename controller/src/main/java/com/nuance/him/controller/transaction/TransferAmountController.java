@@ -40,9 +40,8 @@ public class TransferAmountController {
      * constructor of class {@link TransferAmountController}.
      *
      * @param transferAmountService instance of class {@link TransferAmountService}
-     * @param accountService
      */
-    public TransferAmountController(TransferAmountService transferAmountService) {
+    public TransferAmountController(final TransferAmountService transferAmountService) {
         this.transferAmountService = transferAmountService;
     }
 
@@ -56,18 +55,17 @@ public class TransferAmountController {
      * @return transactionId
      */
     @RequestMapping(value = TRANSFER_AMOUNT, method = RequestMethod.POST, produces = "application/json")
-    public ResponseEntity<TransferAmount> transferAmountApi(@RequestParam("accFrom") @Min(value = 1, message = "Account number Not empty") int accountFrom,
-        @RequestParam("accTo") @Min(1) int accIdTo,
-        @RequestParam("amount") @Min(1) @Digits(integer = 6, fraction = 2, message = "check input amount should fraction up to 2 digits") double amount,
-        @RequestParam("description") String description) {
+    public ResponseEntity<TransferAmount> transferAmountApi(@RequestParam("accFrom") @Min(value = 1, message = "Account number Not empty") final int accountFrom,
+        @RequestParam("accTo") @Min(1) final int accIdTo,
+        @RequestParam("amount") @Min(1) @Digits(integer = 6, fraction = 2, message = "check input amount should fraction up to 2 digits") final double amount,
+        @RequestParam("description") final String description) {
         try {
-            TransferAmount transferAmount = new TransferAmount(accountFrom, accIdTo, amount, description);
-            int transactionId = transferAmountService.transferAmount(transferAmount);
+            final TransferAmount transferAmount = new TransferAmount(accountFrom, accIdTo, amount, description);
+            final int transactionId = transferAmountService.transferAmount(transferAmount);
             return new ResponseEntity("TransferAmount successfully  TransactionId: " + transactionId, HttpStatus.CREATED);
         }
-        catch (TransferAmountServiceException e) {
-            return new ResponseEntity(new CustomErrorType(" transfer Amount failed " + e.getCause().getMessage()),
-                HttpStatus.EXPECTATION_FAILED);
+        catch (final TransferAmountServiceException transferAmountServiceException) {
+            return new ResponseEntity(new CustomErrorType(" transfer Amount failed " + transferAmountServiceException.getCause().getMessage()), HttpStatus.EXPECTATION_FAILED);
         }
     }
 
@@ -78,14 +76,13 @@ public class TransferAmountController {
      * @return List of transactions
      */
     @RequestMapping(value = TRANSACTION_HISTORY, method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<TransferAmount> transactionHistory(@RequestParam("accNumber") int accNumber) {
+    public ResponseEntity<TransferAmount> transactionHistory(@RequestParam("accNumber") final int accNumber) {
         try {
-            List<TransferAmount> transferAmounts = transferAmountService.getTransactionHistory(accNumber);
+            final List<TransferAmount> transferAmounts = transferAmountService.getTransactionHistory(accNumber);
             return new ResponseEntity(transferAmounts, HttpStatus.OK);
         }
-        catch (TransferAmountServiceException t) {
-            return new ResponseEntity(new CustomErrorType("getting transfer history failed "),
-                HttpStatus.EXPECTATION_FAILED);
+        catch (final TransferAmountServiceException transferAmountServiceException) {
+            return new ResponseEntity(new CustomErrorType("getting transfer history failed "), HttpStatus.EXPECTATION_FAILED);
         }
     }
 
@@ -97,10 +94,10 @@ public class TransferAmountController {
      */
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String handle(ConstraintViolationException exception) {
+    public String handle(final ConstraintViolationException exception) {
         String message = "";
-        Set<ConstraintViolation<?>> violations = exception.getConstraintViolations();
-        for (ConstraintViolation<?> violation : violations) {
+        final Set<ConstraintViolation<?>> violations = exception.getConstraintViolations();
+        for (final ConstraintViolation<?> violation : violations) {
             message += violation.getMessage().concat(";");
         }
         return message;

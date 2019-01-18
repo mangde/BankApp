@@ -17,7 +17,7 @@ public class AccountServiceException extends Exception {
      * @param MESSAGE message for the exception
      * @param cause exception
      */
-    public AccountServiceException(String MESSAGE, Throwable cause) {
+    public AccountServiceException(final String MESSAGE, final Throwable cause) {
         super(MESSAGE, cause);
     }
 

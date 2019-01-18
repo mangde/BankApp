@@ -41,14 +41,14 @@ public class CustomerControllerTest extends AbstractTestNGSpringContextTests {
     private static final String CITY = "Pune";
     private static final String ADDRESS = "Pune";
     private static final String PHONE = "9545090850";
-    @Value("${" + CustomerControllerTest.BASE_URL + "}")
+    @Value("${" + BASE_URL + "}")
     private String bankURL;
     /**
      * add customer query.
      */
-    @Value("${" + CustomerControllerTest.ADD_CUSTOMER + "}")
+    @Value("${" + ADD_CUSTOMER + "}")
     private String getAddCustomer;
-    @Value("${" + CustomerControllerTest.SELECT_ALL_CUSTOMER + "}")
+    @Value("${" + SELECT_ALL_CUSTOMER + "}")
     private String getSelectAllCustomer;
     @Mock
     private CustomerService customerService;

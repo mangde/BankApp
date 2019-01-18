@@ -57,7 +57,7 @@ public class AccountServiceImplTest {
     @Test
     public void testOpenAccount() throws Exception {
         when(accountDAO.addAccount(any(Account.class))).thenReturn(1);
-        int result = accountService.addAccount(account);
+        final int result = accountService.addAccount(account);
         assertNotNull(result);
         Mockito.verify(accountDAO).addAccount(any(Account.class));
     }
@@ -71,12 +71,12 @@ public class AccountServiceImplTest {
     public void testOpenAccountException() throws Exception {
         doThrow(AccountDaoException.class).when(accountDAO).addAccount(any(Account.class));
         try {
-            int result = accountService.addAccount(account);
+            final int result = accountService.addAccount(account);
         }
-        catch (AccountServiceException e) {
-            assertEquals(AccountDaoException.class, e.getCause().getClass());
+        catch (final AccountServiceException accountServiceException) {
+            assertEquals(AccountDaoException.class, accountServiceException.getCause().getClass());
             Mockito.verify(accountDAO).addAccount(any(Account.class));
-            throw e;
+            throw accountServiceException;
         }
     }
 
@@ -88,7 +88,7 @@ public class AccountServiceImplTest {
     @Test
     public void testGetBalance() throws Exception {
         when(accountDAO.getCurrentBalance(anyInt())).thenReturn(BALANCE);
-        double result = accountService.getCurrentBalance(ACCOUNT_NUMBER);
+        final double result = accountService.getCurrentBalance(ACCOUNT_NUMBER);
         assertNotNull(result);
         Mockito.verify(accountDAO).getCurrentBalance(anyInt());
     }
@@ -102,12 +102,12 @@ public class AccountServiceImplTest {
     public void testGetBalanceException() throws Exception {
         doThrow(AccountDaoException.class).when(accountDAO).getCurrentBalance(anyInt());
         try {
-            double result = accountService.getCurrentBalance(ACCOUNT_NUMBER);
+            final double result = accountService.getCurrentBalance(ACCOUNT_NUMBER);
         }
-        catch (AccountServiceException e) {
-            assertEquals(AccountDaoException.class, e.getCause().getClass());
+        catch (final AccountServiceException accountServiceException) {
+            assertEquals(AccountDaoException.class, accountServiceException.getCause().getClass());
             Mockito.verify(accountDAO).getCurrentBalance(anyInt());
-            throw e;
+            throw accountServiceException;
         }
     }
 
@@ -119,9 +119,11 @@ public class AccountServiceImplTest {
     @Test
     public void testDeposite() throws Exception {
         when(accountDAO.depositeAmount(anyInt(), anyDouble())).thenReturn(BALANCE);
-        double result = accountService.depositeAmount(ACCOUNT_NUMBER, AMOUNT);
+        when(accountDAO.getCurrentBalance(anyInt())).thenReturn(BALANCE);
+        final double result = accountService.depositeAmount(ACCOUNT_NUMBER, AMOUNT);
         assertNotNull(result);
         Mockito.verify(accountDAO).depositeAmount(anyInt(), anyDouble());
+        Mockito.verify(accountDAO).getCurrentBalance(anyInt());
     }
 
     /**
@@ -131,14 +133,16 @@ public class AccountServiceImplTest {
      */
     @Test(expectedExceptions = AccountServiceException.class)
     public void testDepositException() throws Exception {
+        doThrow(AccountDaoException.class).when(accountDAO).getCurrentBalance(anyInt());
         doThrow(AccountDaoException.class).when(accountDAO).depositeAmount(anyInt(), anyDouble());
         try {
-            double result = accountService.depositeAmount(ACCOUNT_NUMBER, AMOUNT);
+            final double result = accountService.depositeAmount(ACCOUNT_NUMBER, AMOUNT);
         }
-        catch (AccountServiceException e) {
-            assertEquals(AccountDaoException.class, e.getCause().getClass());
-            Mockito.verify(accountDAO).depositeAmount(anyInt(), anyDouble());
-            throw e;
+        catch (final AccountServiceException accountServiceException) {
+            assertEquals(AccountDaoException.class, accountServiceException.getCause().getClass());
+            Mockito.verify(accountDAO).getCurrentBalance(anyInt());
+            Mockito.verify(accountDAO, atMost(2)).depositeAmount(anyInt(), anyDouble());
+            throw accountServiceException;
         }
     }
 
@@ -150,7 +154,7 @@ public class AccountServiceImplTest {
     @Test
     public void testGetAccountDetail() throws Exception {
         when(accountDAO.getAccountDetail(anyInt())).thenReturn(account);
-        Account result = accountService.getAccountDetail(ACCOUNT_NUMBER);
+        final Account result = accountService.getAccountDetail(ACCOUNT_NUMBER);
         assertNotNull(result);
         Mockito.verify(accountDAO).getAccountDetail(anyInt());
     }
@@ -164,12 +168,12 @@ public class AccountServiceImplTest {
     public void testGetAccountDetailException() throws Exception {
         doThrow(AccountDaoException.class).when(accountDAO).getAccountDetail(anyInt());
         try {
-            Account result = accountService.getAccountDetail(ACCOUNT_NUMBER);
+            final Account result = accountService.getAccountDetail(ACCOUNT_NUMBER);
         }
-        catch (AccountServiceException e) {
-            assertEquals(AccountDaoException.class, e.getCause().getClass());
+        catch (final AccountServiceException accountServiceException) {
+            assertEquals(AccountDaoException.class, accountServiceException.getCause().getClass());
             Mockito.verify(accountDAO).getAccountDetail(anyInt());
-            throw e;
+            throw accountServiceException;
         }
     }
 
@@ -180,12 +184,12 @@ public class AccountServiceImplTest {
      */
     @Test
     public void testWithdraw() throws Exception {
-        when(accountDAO.withDrawAmount(anyInt(), anyDouble())).thenReturn(BALANCE);
         when(accountDAO.getCurrentBalance(anyInt())).thenReturn(BALANCE);
-        double result = accountService.withDrawAmount(ACCOUNT_NUMBER, AMOUNT);
+        when(accountDAO.withDrawAmount(anyInt(), anyDouble())).thenReturn(BALANCE);
+        final double result = accountService.withDrawAmount(ACCOUNT_NUMBER, AMOUNT);
         assertNotNull(result);
-        Mockito.verify(accountDAO).withDrawAmount(anyInt(), anyDouble());
         Mockito.verify(accountDAO).getCurrentBalance(anyInt());
+        Mockito.verify(accountDAO).withDrawAmount(anyInt(), anyDouble());
     }
 
     /**
@@ -198,14 +202,14 @@ public class AccountServiceImplTest {
         doThrow(AccountDaoException.class).when(accountDAO).withDrawAmount(anyInt(), anyDouble());
         doThrow(AccountDaoException.class).when(accountDAO).getCurrentBalance(anyInt());
         try {
-            double balance = accountService.getCurrentBalance(ACCOUNT_NUMBER);
-            double result = accountService.withDrawAmount(ACCOUNT_NUMBER, AMOUNT);
+            final double balance = accountService.getCurrentBalance(ACCOUNT_NUMBER);
+            final double result = accountService.withDrawAmount(ACCOUNT_NUMBER, AMOUNT);
         }
-        catch (AccountServiceException e) {
-            assertEquals(AccountDaoException.class, e.getCause().getClass());
+        catch (final AccountServiceException accountServiceException) {
+            assertEquals(AccountDaoException.class, accountServiceException.getCause().getClass());
             Mockito.verify(accountDAO).getCurrentBalance(anyInt());
             Mockito.verify(accountDAO, atMost(2)).withDrawAmount(anyInt(), anyDouble());
-            throw e;
+            throw accountServiceException;
         }
     }
 }

@@ -14,7 +14,7 @@ public class CustomErrorType {
     /**
      * @param errorMessage getting error message
      */
-    public CustomErrorType(String errorMessage) {
+    public CustomErrorType( final String errorMessage) {
         this.errorMessage = errorMessage;
     }
 

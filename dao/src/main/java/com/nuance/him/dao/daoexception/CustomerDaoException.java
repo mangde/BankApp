@@ -17,7 +17,7 @@ public class CustomerDaoException extends Exception {
      * @param MESSAGE message for the exception
      * @param cause exception
      */
-    public CustomerDaoException(String MESSAGE, Throwable cause) {
+    public CustomerDaoException(final String MESSAGE, final Throwable cause) {
         super(MESSAGE, cause);
     }
 

@@ -37,6 +37,7 @@ public class CustomerServiceImplTest {
     private Customer customer;
     private List<Customer> customers;
 
+
     /**
      * initial setup.
      */
@@ -44,7 +45,7 @@ public class CustomerServiceImplTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         customerService = new CustomerServiceImpl(customerDao);
-        customer = new Customer(CustomerServiceImplTest.NAME, CustomerServiceImplTest.PHONE, CustomerServiceImplTest.ADDRESS, CustomerServiceImplTest.CITY);
+        customer = new Customer(NAME, PHONE, ADDRESS, CITY);
     }
 
     /**
@@ -55,7 +56,7 @@ public class CustomerServiceImplTest {
     @Test
     public void testAddCustomer() throws Exception {
         when(customerDao.addCustomer(any(Customer.class))).thenReturn(1);
-        int result = customerService.addCustomer(customer);
+        final int result = customerService.addCustomer(customer);
         assertNotNull(result);
         Mockito.verify(customerDao).addCustomer(any(Customer.class));
     }
@@ -69,12 +70,12 @@ public class CustomerServiceImplTest {
     public void testAddCustomerException() throws Exception {
         doThrow(CustomerDaoException.class).when(customerDao).addCustomer(any(Customer.class));
         try {
-            int result = customerService.addCustomer(customer);
+            final int result = customerService.addCustomer(customer);
         }
-        catch (CustomerServiceException e) {
-            assertEquals(CustomerDaoException.class, e.getCause().getClass());
+        catch (final CustomerServiceException customerServiceException) {
+            assertEquals(CustomerDaoException.class, customerServiceException.getCause().getClass());
             Mockito.verify(customerDao).addCustomer(customer);
-            throw e;
+            throw customerServiceException;
         }
     }
 
@@ -101,10 +102,10 @@ public class CustomerServiceImplTest {
         try {
             customerService.getAllCustomers();
         }
-        catch (CustomerServiceException e) {
-            assertEquals(CustomerDaoException.class, e.getCause().getClass(), "Exception mismatch");
+        catch (final CustomerServiceException customerServiceException ) {
+            assertEquals(CustomerDaoException.class, customerServiceException.getCause().getClass(), "Exception mismatch");
             Mockito.verify(customerDao).getAllCustomers();
-            throw e;
+            throw customerServiceException;
         }
     }
 }

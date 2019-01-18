@@ -17,7 +17,7 @@ public class TransferAmountServiceException extends Exception {
      * @param MESSAGE message for the exception
      * @param cause exception
      */
-    public TransferAmountServiceException(String MESSAGE, Throwable cause) {
+    public TransferAmountServiceException(final String MESSAGE, final Throwable cause) {
         super(MESSAGE, cause);
     }
 
@@ -26,6 +26,6 @@ public class TransferAmountServiceException extends Exception {
      */
     @Override
     public String getMessage() {
-        return TransferAmountServiceException.MESSAGE;
+        return MESSAGE;
     }
 }

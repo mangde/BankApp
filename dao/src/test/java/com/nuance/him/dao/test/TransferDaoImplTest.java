@@ -64,7 +64,7 @@ public class TransferDaoImplTest extends AbstractTestNGSpringContextTests {
     @Transactional
     public void testTransferAmount() throws Exception {
         assertNotNull(transferDAO);
-        int transactionId = transferDAO.transferAmount(transferAmount);
+        final int transactionId = transferDAO.transferAmount(transferAmount);
         assertNotEquals(0, transactionId);
     }
 
@@ -77,7 +77,7 @@ public class TransferDaoImplTest extends AbstractTestNGSpringContextTests {
     @Transactional
     public void testTransactionHistory() throws Exception {
         assertNotNull(transferDAO);
-        List<TransferAmount> transferAmounts = transferDAO.getTransactionHistory(FROM_ACC);
+        final List<TransferAmount> transferAmounts = transferDAO.getTransactionHistory(FROM_ACC);
         assertNotNull(transferAmounts, "transferAmounts should not null");
     }
 }

@@ -7,12 +7,23 @@
  */
 package com.nuance.him.service.serviceexception;
 
+/**
+ * Insufficient Balance Exception.
+ */
 public class InsufficientBalanceException extends Exception {
 
-    private static String MESSAGE;
+    /**
+     * return message.
+     */
+    private static String message;
 
-    public InsufficientBalanceException(String insufficientBalance) {
-        MESSAGE = insufficientBalance;
+    /**
+     * construct for {@link InsufficientBalanceException}.
+     *
+     * @param insufficientBalance message
+     */
+    public InsufficientBalanceException(final String insufficientBalance) {
+        message = insufficientBalance;
     }
 
     /**
@@ -20,6 +31,6 @@ public class InsufficientBalanceException extends Exception {
      */
     @Override
     public String getMessage() {
-        return MESSAGE;
+        return message;
     }
 }

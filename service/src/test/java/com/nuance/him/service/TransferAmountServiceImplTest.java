@@ -59,7 +59,7 @@ public class TransferAmountServiceImplTest {
     @Test
     public void testTransferAmount() throws Exception {
         when(transferDAO.transferAmount(any(TransferAmount.class))).thenReturn(1);
-        int result = transactionService.transferAmount(transferAmount);
+        final int result = transactionService.transferAmount(transferAmount);
         assertNotNull(result);
         Mockito.verify(transferDAO).transferAmount(any(TransferAmount.class));
     }
@@ -73,12 +73,12 @@ public class TransferAmountServiceImplTest {
     public void testTransferAmountException() throws Exception {
         doThrow(TransferDaoException.class).when(transferDAO).transferAmount(any(TransferAmount.class));
         try {
-            int result = transactionService.transferAmount(transferAmount);
+            final int result = transactionService.transferAmount(transferAmount);
         }
-        catch (TransferAmountServiceException e) {
-            assertEquals(TransferDaoException.class, e.getCause().getClass());
+        catch (final TransferAmountServiceException transferAmountServiceException) {
+            assertEquals(TransferDaoException.class, transferAmountServiceException.getCause().getClass());
             Mockito.verify(transferDAO).transferAmount(any(TransferAmount.class));
-            throw e;
+            throw transferAmountServiceException;
         }
     }
 
@@ -90,7 +90,7 @@ public class TransferAmountServiceImplTest {
     @Test
     public void testTransactionHistory() throws Exception {
         when(transferDAO.getTransactionHistory(anyInt())).thenReturn(anyListOf(TransferAmount.class));
-        List<TransferAmount> transferAmounts = transactionService.getTransactionHistory(FROM_ACC);
+        final List<TransferAmount> transferAmounts = transactionService.getTransactionHistory(FROM_ACC);
         assertNotNull(transferAmounts);
         Mockito.verify(transferDAO).getTransactionHistory(anyInt());
     }
@@ -104,12 +104,12 @@ public class TransferAmountServiceImplTest {
     public void testTransactionHistoryException() throws Exception {
         doThrow(TransferDaoException.class).when(transferDAO).getTransactionHistory(anyInt());
         try {
-            List<TransferAmount> transferAmounts = transactionService.getTransactionHistory(FROM_ACC);
+            final List<TransferAmount> transferAmounts = transactionService.getTransactionHistory(FROM_ACC);
         }
-        catch (TransferAmountServiceException e) {
-            assertEquals(TransferDaoException.class, e.getCause().getClass());
+        catch (final TransferAmountServiceException transferAmountServiceException) {
+            assertEquals(TransferDaoException.class, transferAmountServiceException.getCause().getClass());
             Mockito.verify(transferDAO).getTransactionHistory(anyInt());
-            throw e;
+            throw transferAmountServiceException;
         }
     }
 }

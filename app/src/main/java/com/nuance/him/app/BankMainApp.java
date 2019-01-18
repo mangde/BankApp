@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import com.nuance.him.config.accountconfig.AccountControllerConfig;
 import com.nuance.him.config.customerconfig.CustomerControllerConfig;
-import com.nuance.him.config.transactionConfig.TransferAmountControllerConfig;
+import com.nuance.him.config.transactionconfig.TransferAmountControllerConfig;
 
 /**
  * Start point for application.
@@ -22,7 +22,7 @@ public class BankMainApp {
     /**
      * @param args method arguments String array.
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         SpringApplication.run(BankMainApp.class, args);
     }
 

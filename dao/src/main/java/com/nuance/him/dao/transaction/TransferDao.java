@@ -8,6 +8,9 @@ import com.nuance.him.dao.daoexception.TransferDaoException;
 import com.nuance.him.model.transaction.TransferAmount;
 import java.util.List;
 
+/**
+ * TransferDao interface.
+ */
 public interface TransferDao {
 
     /**

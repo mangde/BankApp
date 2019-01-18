@@ -22,17 +22,17 @@ public class CustomerServiceImpl implements CustomerService {
      *
      * @param customerDao instance of CustomerDao.
      */
-    public CustomerServiceImpl(CustomerDao customerDao) {
+    public CustomerServiceImpl(final CustomerDao customerDao) {
         this.customerDao = customerDao;
     }
 
     @Override
-    public int addCustomer(Customer customer) throws CustomerServiceException {
+    public int addCustomer(final Customer customer) throws CustomerServiceException {
         try {
             return customerDao.addCustomer(customer);
         }
-        catch (CustomerDaoException e) {
-            throw new CustomerServiceException(e.getMessage(), e);
+        catch (final CustomerDaoException customerDaoException) {
+            throw new CustomerServiceException(customerDaoException.getMessage(), customerDaoException);
         }
     }
 
@@ -41,8 +41,8 @@ public class CustomerServiceImpl implements CustomerService {
         try {
             return customerDao.getAllCustomers();
         }
-        catch (CustomerDaoException e) {
-            throw new CustomerServiceException(e.getMessage(), e);
+        catch (final CustomerDaoException customerDaoException) {
+            throw new CustomerServiceException(customerDaoException.getMessage(), customerDaoException);
         }
     }
 }

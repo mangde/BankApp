@@ -17,7 +17,7 @@ public class CustomerServiceException extends Exception {
      * @param MESSAGE message for the exception
      * @param cause exception
      */
-    public CustomerServiceException(String MESSAGE, Throwable cause) {
+    public CustomerServiceException(final String MESSAGE, final Throwable cause) {
         super(MESSAGE, cause);
     }
 

@@ -12,12 +12,12 @@ import java.sql.Date;
  */
 public class TransferAmount {
 
+    @Id
+    private int transactionId;
     private final int accIdFrom;
     private final int accIdTo;
     private final double amount;
     private final String description;
-    @Id
-    private int transactionId;
     private Date date;
 
     /**
@@ -28,7 +28,7 @@ public class TransferAmount {
      * @param amount Amount
      * @param description Description
      */
-    public TransferAmount(int accIdFrom, int accIdTo, double amount, String description) {
+    public TransferAmount(final int accIdFrom, final int accIdTo, final double amount, final String description) {
         this.accIdFrom = accIdFrom;
         this.accIdTo = accIdTo;
         this.amount = amount;
@@ -49,7 +49,7 @@ public class TransferAmount {
      *
      * @param transactionId TransactionId
      */
-    public void setTransactionId(int transactionId) {
+    public void setTransactionId(final int transactionId) {
         this.transactionId = transactionId;
     }
 
@@ -85,7 +85,7 @@ public class TransferAmount {
      *
      * @param date date
      */
-    public void setDate(Date date) {
+    public void setDate(final Date date) {
         this.date = date;
     }
 

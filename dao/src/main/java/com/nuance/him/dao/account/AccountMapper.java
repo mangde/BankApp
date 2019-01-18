@@ -23,8 +23,8 @@ public class AccountMapper implements RowMapper<Account> {
      * @throws SQLException SQLException
      */
     @Override
-    public Account mapRow(ResultSet rs, int rowNum) throws SQLException {
-        Account account = new Account(rs.getString("accTypeId"), rs.getDouble("balance"), rs.getInt("customerId"));
+    public Account mapRow(final ResultSet rs, final int rowNum) throws SQLException {
+        final Account account = new Account(rs.getString("accTypeId"), rs.getDouble("balance"), rs.getInt("customerId"));
         account.setAccountNo(rs.getInt("accNumber"));
         return account;
     }

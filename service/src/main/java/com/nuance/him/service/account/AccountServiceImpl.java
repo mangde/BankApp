@@ -22,66 +22,67 @@ public class AccountServiceImpl implements AccountService {
      *
      * @param accountDAO instance of {@link AccountDao}
      */
-    public AccountServiceImpl(AccountDao accountDAO) {
+    public AccountServiceImpl(final AccountDao accountDAO) {
         accountDao = accountDAO;
     }
 
     @Override
-    public int addAccount(Account account) throws AccountServiceException {
+    public int addAccount(final Account account) throws AccountServiceException {
         try {
             return accountDao.addAccount(account);
         }
-        catch (AccountDaoException a) {
-            throw new AccountServiceException("exception in service", a);
+        catch (final AccountDaoException accountDaoException) {
+            throw new AccountServiceException("exception in service", accountDaoException);
         }
     }
 
     @Override
-    public double depositeAmount(int accountNumber, double amount) throws AccountServiceException {
+    public double depositeAmount(final int accountNumber, final double amount) throws AccountServiceException {
         try {
-            return accountDao.depositeAmount(accountNumber, amount);
+            final double currentBalance = amount + getCurrentBalance(accountNumber);
+            return accountDao.depositeAmount(accountNumber, currentBalance);
         }
-        catch (AccountDaoException e) {
-            throw new AccountServiceException("exception in service deposite amount", e);
+        catch (final AccountDaoException accountDaoException) {
+            throw new AccountServiceException("exception in service deposite amount", accountDaoException);
         }
     }
 
     @Override
-    public double getCurrentBalance(int accountNumber) throws AccountServiceException {
+    public double getCurrentBalance(final int accountNumber) throws AccountServiceException {
         try {
             return accountDao.getCurrentBalance(accountNumber);
         }
-        catch (AccountDaoException e) {
-            throw new AccountServiceException("exception in service getCurrentBalance", e);
+        catch (final AccountDaoException accountDaoException) {
+            throw new AccountServiceException("exception in service getCurrentBalance", accountDaoException);
         }
     }
 
     @Override
-    public Account getAccountDetail(int accountNumber) throws AccountServiceException {
+    public Account getAccountDetail(final int accountNumber) throws AccountServiceException {
         try {
             return accountDao.getAccountDetail(accountNumber);
         }
-        catch (AccountDaoException e) {
-            throw new AccountServiceException("exception in service getAccountDetail", e);
+        catch (final AccountDaoException accountDaoException) {
+            throw new AccountServiceException("exception in service getAccountDetail", accountDaoException);
         }
     }
 
     @Override
-    public double withDrawAmount(int accountNumber, double amount) throws AccountServiceException {
+    public double withDrawAmount(final int accountNumber, final double amount) throws AccountServiceException {
         try {
-            double currentAvailableBalance = accountDao.getCurrentBalance(accountNumber);
+            final double currentAvailableBalance = accountDao.getCurrentBalance(accountNumber);
             if (currentAvailableBalance < amount) {
                 throw new InsufficientBalanceException("insufficient balance ");
             }
-            double availableBalance = currentAvailableBalance - amount;
+            final double availableBalance = currentAvailableBalance - amount;
             accountDao.withDrawAmount(accountNumber, availableBalance);
             return availableBalance;
         }
-        catch (AccountDaoException e) {
-            throw new AccountServiceException("exception in service withDrawAmount", e);
+        catch (final AccountDaoException accountDaoException) {
+            throw new AccountServiceException("exception in service withDrawAmount", accountDaoException);
         }
-        catch (InsufficientBalanceException e) {
-            throw new AccountServiceException("insufficient Balance Exception", e);
+        catch (final InsufficientBalanceException insufficientBalanceException) {
+            throw new AccountServiceException("insufficient Balance Exception", insufficientBalanceException);
         }
     }
 }

@@ -31,33 +31,33 @@ public class TransferDaoImpl implements TransferDao {
      * @param getTransferAmount query for transfer amount
      * @param getTransactionHistory query for getTransaction Details
      */
-    public TransferDaoImpl(NamedParameterJdbcTemplate namedParameterJdbcTemplate, String getTransferAmount, String getTransactionHistory) {
+    public TransferDaoImpl(final NamedParameterJdbcTemplate namedParameterJdbcTemplate, final String getTransferAmount, final String getTransactionHistory) {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
         this.getTransferAmount = getTransferAmount;
         this.getTransactionHistory = getTransactionHistory;
     }
 
     @Override
-    public int transferAmount(TransferAmount transferAmount) throws TransferDaoException {
+    public int transferAmount(final TransferAmount transferAmount) throws TransferDaoException {
         try {
-            KeyHolder holder = new GeneratedKeyHolder();
-            MapSqlParameterSource paramSource = mapParameterSource(transferAmount);
+            final KeyHolder holder = new GeneratedKeyHolder();
+            final MapSqlParameterSource paramSource = mapParameterSource(transferAmount);
             namedParameterJdbcTemplate.update(getTransferAmount, paramSource, holder);
             return holder.getKey().intValue();
         }
-        catch (DataAccessException e) {
-            throw new TransferDaoException("Failed to transfer amount", e);
+        catch (final DataAccessException dataAccessException) {
+            throw new TransferDaoException("Failed to transfer amount", dataAccessException);
         }
     }
 
     @Override
-    public List<TransferAmount> getTransactionHistory(int accountNumber) throws TransferDaoException {
+    public List<TransferAmount> getTransactionHistory( final int accountNumber) throws TransferDaoException {
         try {
-            SqlParameterSource accNumber = new MapSqlParameterSource("accNumber", accountNumber);
+            final SqlParameterSource accNumber = new MapSqlParameterSource("accNumber", accountNumber);
             return namedParameterJdbcTemplate.query(getTransactionHistory, accNumber, new TransactionMapper());
         }
-        catch (DataAccessException e) {
-            throw new TransferDaoException("Failed to display TransferAmount details", e);
+        catch (final DataAccessException dataAccessException) {
+            throw new TransferDaoException("Failed to display TransferAmount details", dataAccessException);
         }
     }
 
@@ -65,13 +65,12 @@ public class TransferDaoImpl implements TransferDao {
      * method to map sqlParameter.
      *
      * @param transferAmount instance of class {@link TransferAmount}
-     * @param currentBalance currentBalanceFromAc
      * @return instance of {@link MapSqlParameterSource}
      */
-    private MapSqlParameterSource mapParameterSource(TransferAmount transferAmount) {
-        java.util.Date date = new Date();
-        Object param = new java.sql.Timestamp(date.getTime());
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+    private MapSqlParameterSource mapParameterSource(final TransferAmount transferAmount) {
+        final java.util.Date date = new Date();
+        final Object param = new java.sql.Timestamp(date.getTime());
+        final MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("dateTime", param);
         paramSource.addValue("amount", transferAmount.getAmount());
         paramSource.addValue("accFrom", transferAmount.getAccIdFrom());

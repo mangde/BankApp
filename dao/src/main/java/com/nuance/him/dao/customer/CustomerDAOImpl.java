@@ -31,7 +31,7 @@ public class CustomerDaoImpl implements CustomerDao {
      * @param insertAddress query for insert address
      * @param getAllCustomer query for get all customer record
      */
-    public CustomerDaoImpl(NamedParameterJdbcTemplate namedParameterJdbcTemplate, String insertCustomer, String insertAddress, String getAllCustomer) {
+    public CustomerDaoImpl(final NamedParameterJdbcTemplate namedParameterJdbcTemplate, final String insertCustomer, final String insertAddress, final String getAllCustomer) {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
         this.insertCustomer = insertCustomer;
         this.insertAddress = insertAddress;
@@ -39,18 +39,18 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
     @Override
-    public int addCustomer(Customer customer) throws CustomerDaoException {
-        KeyHolder holder = new GeneratedKeyHolder();
-        MapSqlParameterSource paramSourceCustomer = mapSqlParameterSource(customer);
+    public int addCustomer(final Customer customer) throws CustomerDaoException {
+        final KeyHolder holder = new GeneratedKeyHolder();
+        final MapSqlParameterSource paramSourceCustomer = mapSqlParameterSource(customer);
         try {
             namedParameterJdbcTemplate.update(insertCustomer, paramSourceCustomer, holder);
             customer.setId(holder.getKey().intValue());
-            MapSqlParameterSource paramSourceAddress = mapSqlParameterSource(customer);
+            final MapSqlParameterSource paramSourceAddress = mapSqlParameterSource(customer);
             namedParameterJdbcTemplate.update(insertAddress, paramSourceAddress);
             return holder.getKey().intValue();
         }
-        catch (DataAccessException e) {
-            throw new CustomerDaoException("Failed to add customer ", e);
+        catch (final DataAccessException dataAccessException) {
+            throw new CustomerDaoException("Failed to add customer ", dataAccessException);
         }
     }
 
@@ -59,8 +59,8 @@ public class CustomerDaoImpl implements CustomerDao {
         try {
             return namedParameterJdbcTemplate.query(getAllCustomer, new CustomerMapper());
         }
-        catch (DataAccessException e) {
-            throw new CustomerDaoException("Failed to display customer details", e);
+        catch (final DataAccessException dataAccessException) {
+            throw new CustomerDaoException("Failed to display customer details", dataAccessException);
         }
     }
 
@@ -70,8 +70,8 @@ public class CustomerDaoImpl implements CustomerDao {
      * @param customer instance of class {@link Customer}
      * @return paramSource
      */
-    private MapSqlParameterSource mapSqlParameterSource(Customer customer) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+    private MapSqlParameterSource mapSqlParameterSource(final Customer customer) {
+        final MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("name", customer.getName());
         paramSource.addValue("phone", customer.getPhone());
         paramSource.addValue("address", customer.getAddress());

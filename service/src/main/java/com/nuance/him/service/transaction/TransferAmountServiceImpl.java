@@ -30,38 +30,39 @@ public class TransferAmountServiceImpl implements TransferAmountService {
      * Constructor of {@link TransferAmountServiceImpl}.
      *
      * @param transferDAO instance of {@link TransferDao}
+     * @param  accountService instance of  {@link AccountService}
      */
-    public TransferAmountServiceImpl(TransferDao transferDAO, AccountService accountService) {
+    public TransferAmountServiceImpl(final TransferDao transferDAO, final AccountService accountService) {
         this.transferDAO = transferDAO;
         this.accountService = accountService;
     }
 
     @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED, readOnly = false, timeout = 100, rollbackFor = Exception.class)
     @Override
-    public int transferAmount(TransferAmount transferAmount) throws TransferAmountServiceException {
+    public int transferAmount( final TransferAmount transferAmount) throws TransferAmountServiceException {
         try {
             try {
                 accountService.getAccountDetail(transferAmount.getAccIdTo());
                 accountService.withDrawAmount(transferAmount.getAccIdFrom(), transferAmount.getAmount());
                 accountService.depositeAmount(transferAmount.getAccIdTo(), transferAmount.getAmount());
             }
-            catch (AccountServiceException e) {
-                throw new TransferAmountServiceException(" AccountServiceException in transferAmount ", e);
+            catch (final AccountServiceException accountServiceException) {
+                throw new TransferAmountServiceException(" AccountServiceException in transferAmount ", accountServiceException);
             }
             return transferDAO.transferAmount(transferAmount);
         }
-        catch (TransferDaoException e) {
-            throw new TransferAmountServiceException("serviceException in transferAmount", e);
+        catch (final TransferDaoException transferDaoException) {
+            throw new TransferAmountServiceException("serviceException in transferAmount", transferDaoException);
         }
     }
 
     @Override
-    public List<TransferAmount> getTransactionHistory(int accountNumber) throws TransferAmountServiceException {
+    public List<TransferAmount> getTransactionHistory(final int accountNumber) throws TransferAmountServiceException {
         try {
             return transferDAO.getTransactionHistory(accountNumber);
         }
-        catch (TransferDaoException e) {
-            throw new TransferAmountServiceException("serviceException in transaction", e);
+        catch (final TransferDaoException transferDaoException) {
+            throw new TransferAmountServiceException("serviceException in transaction", transferDaoException);
         }
     }
 }

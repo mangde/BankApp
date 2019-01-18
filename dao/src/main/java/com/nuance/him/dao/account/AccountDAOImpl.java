@@ -23,7 +23,7 @@ public class AccountDaoImpl implements AccountDao {
     private final String getBalance;
     private final String getDeposite;
     private final String accountDetail;
-    private final String withDraw;
+    private final String getWithDraw;
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     /**
@@ -35,74 +35,80 @@ public class AccountDaoImpl implements AccountDao {
      * @param getBalance query for check current available balance
      * @param getDeposite query for deposite amount
      * @param accountDetail query for getAccountDetails
+     * @param getWithDraw withdraw amount query
      */
-    public AccountDaoImpl(NamedParameterJdbcTemplate namedParameterJdbcTemplate, String getAddAccount, String getGetAccTypeId, String getBalance, String getDeposite, String accountDetail, String getWithDraw) {
+    public AccountDaoImpl(final NamedParameterJdbcTemplate namedParameterJdbcTemplate, final String getAddAccount, final String getGetAccTypeId, final String getBalance, final String getDeposite, final String accountDetail,
+        final String getWithDraw) {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
         this.getAddAccount = getAddAccount;
         this.getGetAccTypeId = getGetAccTypeId;
         this.getBalance = getBalance;
         this.getDeposite = getDeposite;
         this.accountDetail = accountDetail;
-        withDraw = getWithDraw;
+        this.getWithDraw = getWithDraw;
     }
 
     @Override
-    public int addAccount(Account account) throws AccountDaoException {
+    public int addAccount(final Account account) throws AccountDaoException {
+        final KeyHolder holder = new GeneratedKeyHolder();
+        final SqlParameterSource getAccTypeId = new MapSqlParameterSource("type", account.getType());
         try {
-            KeyHolder holder = new GeneratedKeyHolder();
-            SqlParameterSource getAccTypeId = new MapSqlParameterSource("type", account.getType());
-            int accTypeId = namedParameterJdbcTemplate.queryForObject(getGetAccTypeId, getAccTypeId, Integer.class).intValue();
-            MapSqlParameterSource paramSourceAcc = mapParameterSource(account, accTypeId);
+            final int accTypeId = namedParameterJdbcTemplate.queryForObject(getGetAccTypeId, getAccTypeId, Integer.class).intValue();
+            final MapSqlParameterSource paramSourceAcc = mapParameterSource(account, accTypeId);
             namedParameterJdbcTemplate.update(getAddAccount, paramSourceAcc, holder);
             return holder.getKey().intValue();
         }
-        catch (DataAccessException e) {
-            throw new AccountDaoException("Failed to add Account ", e);
+        catch (final DataAccessException dataAccessException) {
+            throw new AccountDaoException("Failed to add Account ", dataAccessException);
         }
     }
 
     @Override
-    public double depositeAmount(int accountNumber, double amount) throws AccountDaoException {
-        double newBalance = amount + getCurrentBalance(accountNumber);
-        MapSqlParameterSource paramDeposite = new MapSqlParameterSource();
+    public double depositeAmount(final int accountNumber, final double amount) throws AccountDaoException {
+        final MapSqlParameterSource paramDeposite = new MapSqlParameterSource();
         paramDeposite.addValue("accNumber", accountNumber);
-        paramDeposite.addValue("balance", newBalance);
-        namedParameterJdbcTemplate.update(getDeposite, paramDeposite);
-        return newBalance;
+        paramDeposite.addValue("balance", amount);
+        try {
+            namedParameterJdbcTemplate.update(getDeposite, paramDeposite);
+            return amount;
+        }
+        catch (final DataAccessException dataAccessException) {
+            throw new AccountDaoException("Failed to deposite ", dataAccessException);
+        }
     }
 
     @Override
-    public double getCurrentBalance(int accountNumber) throws AccountDaoException {
+    public double getCurrentBalance(final int accountNumber) throws AccountDaoException {
+        final SqlParameterSource namedParameters = new MapSqlParameterSource("accNumber", accountNumber);
         try {
-            SqlParameterSource namedParameters = new MapSqlParameterSource("accNumber", accountNumber);
             return namedParameterJdbcTemplate.queryForObject(getBalance, namedParameters, Double.class);
         }
-        catch (DataAccessException e) {
-            throw new AccountDaoException("failed to getCurrent balance", e);
+        catch (final DataAccessException dataAccessException) {
+            throw new AccountDaoException("failed to getCurrent balance", dataAccessException);
         }
     }
 
     @Override
-    public Account getAccountDetail(int accountNumber) throws AccountDaoException {
+    public Account getAccountDetail(final int accountNumber) throws AccountDaoException {
+        final SqlParameterSource namedParameters = new MapSqlParameterSource("accNumber", accountNumber);
         try {
-            SqlParameterSource namedParameters = new MapSqlParameterSource("accNumber", accountNumber);
             return namedParameterJdbcTemplate.queryForObject(accountDetail, namedParameters, new AccountMapper());
         }
-        catch (DataAccessException e) {
-            throw new AccountDaoException("failed to getAccountDetails ", e);
+        catch (final DataAccessException dataAccessException) {
+            throw new AccountDaoException("failed to getAccountDetails ", dataAccessException);
         }
     }
 
     @Override
-    public double withDrawAmount(int accountNumber, double amount) throws AccountDaoException {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+    public double withDrawAmount(final int accountNumber, final double amount) throws AccountDaoException {
+        final MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("balance", amount);
         paramSource.addValue("accNumber", accountNumber);
         try {
-            return namedParameterJdbcTemplate.update(withDraw, paramSource);
+            return namedParameterJdbcTemplate.update(getWithDraw, paramSource);
         }
-        catch (DataAccessException e) {
-            throw new AccountDaoException("failed to withDrawAmount ", e);
+        catch (final DataAccessException dataAccessException) {
+            throw new AccountDaoException("failed to withDrawAmount ", dataAccessException);
         }
     }
 
@@ -113,8 +119,8 @@ public class AccountDaoImpl implements AccountDao {
      * @param Id accountTypeId
      * @return paramSource
      */
-    private MapSqlParameterSource mapParameterSource(Account account, int Id) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+    private MapSqlParameterSource mapParameterSource(final Account account, final int Id) {
+        final MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("accTypeId", Id);
         paramSource.addValue("balance", account.getBalance());
         paramSource.addValue("customerId", account.getCustomerId());

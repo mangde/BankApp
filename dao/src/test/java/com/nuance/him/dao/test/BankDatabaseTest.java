@@ -50,7 +50,7 @@ public class BankDatabaseTest {
             ds.setURL(url);
             ds.getConnection();
         }
-        catch (SQLServerException e) {
+        catch (final SQLServerException e) {
             e.toString();
         }
         return ds;
@@ -64,7 +64,7 @@ public class BankDatabaseTest {
      */
     @Bean
     @Qualifier("dataSource")
-    public NamedParameterJdbcTemplate namedParameterJdbcTemplate(DataSource dataSource) {
+    public NamedParameterJdbcTemplate namedParameterJdbcTemplate(final DataSource dataSource) {
         return new NamedParameterJdbcTemplate(dataSource);
     }
 

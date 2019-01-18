@@ -9,7 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
 import com.nuance.him.config.accountconfig.AccountControllerConfig;
-import com.nuance.him.config.transactionConfig.TransferAmountControllerConfig;
+import com.nuance.him.config.transactionconfig.TransferAmountControllerConfig;
 import com.nuance.him.controller.transaction.TransferAmountController;
 import com.nuance.him.service.account.AccountService;
 import static org.testng.Assert.assertNotNull;
