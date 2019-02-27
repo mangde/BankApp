@@ -1,0 +1,8 @@
+rootProject.name = 'BankApp'
+include('app')
+include('config')
+include('controller')
+include('dao')
+include('service')
+
+

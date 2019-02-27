@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="26" passed="26">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="416" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="416" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+      <class name="com.nuance.him.service.CustomerServiceImplTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.CustomerServiceImplTest@5b275dab]" name="setUp" is-config="true" duration-ms="7" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testAddCustomer()[pri:0, instance:com.nuance.him.service.CustomerServiceImplTest@5b275dab]" name="testAddCustomer" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddCustomer -->
+        <test-method status="PASS" signature="testAddCustomerException()[pri:0, instance:com.nuance.him.service.CustomerServiceImplTest@5b275dab]" name="testAddCustomerException" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <exception class="com.nuance.him.service.serviceexception.CustomerServiceException">
+            <full-stacktrace>
+              <![CDATA[com.nuance.him.service.serviceexception.CustomerServiceException: 
+at com.nuance.him.service.customer.CustomerServiceImpl.addCustomer(CustomerServiceImpl.java:42)
+at com.nuance.him.service.CustomerServiceImplTest.testAddCustomerException(CustomerServiceImplTest.java:82)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:790)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:143)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner.privateRun(TestRunner.java:763)
+at org.testng.TestRunner.run(TestRunner.java:594)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1146)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
+at org.testng.TestNG.runSuites(TestNG.java:997)
+at org.testng.TestNG.run(TestNG.java:965)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:205)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:108)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: com.nuance.him.dao.daoexception.CustomerDaoException: 
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.nuance.him.service.serviceexception.CustomerServiceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddCustomerException -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.CustomerServiceImplTest@5b275dab]" name="setUp" is-config="true" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testDisplayCustomer()[pri:0, instance:com.nuance.him.service.CustomerServiceImplTest@5b275dab]" name="testDisplayCustomer" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDisplayCustomer -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.CustomerServiceImplTest@5b275dab]" name="setUp" is-config="true" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.CustomerServiceImplTest@5b275dab]" name="setUp" is-config="true" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.CustomerServiceImplTest@5b275dab]" name="setUp" is-config="true" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testDisplayCustomerException()[pri:0, instance:com.nuance.him.service.CustomerServiceImplTest@5b275dab]" name="testDisplayCustomerException" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <exception class="com.nuance.him.service.serviceexception.CustomerServiceException">
+            <full-stacktrace>
+              <![CDATA[com.nuance.him.service.serviceexception.CustomerServiceException: 
+at com.nuance.him.service.customer.CustomerServiceImpl.getAllCustomers(CustomerServiceImpl.java:52)
+at com.nuance.him.service.CustomerServiceImplTest.testDisplayCustomerException(CustomerServiceImplTest.java:112)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:790)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:143)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner.privateRun(TestRunner.java:763)
+at org.testng.TestRunner.run(TestRunner.java:594)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1146)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
+at org.testng.TestNG.runSuites(TestNG.java:997)
+at org.testng.TestNG.run(TestNG.java:965)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:205)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:108)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: com.nuance.him.dao.daoexception.CustomerDaoException: 
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.nuance.him.service.serviceexception.CustomerServiceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDisplayCustomerException -->
+        <test-method status="PASS" signature="testFindCustomerException()[pri:0, instance:com.nuance.him.service.CustomerServiceImplTest@5b275dab]" name="testFindCustomerException" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <exception class="com.nuance.him.service.serviceexception.CustomerServiceException">
+            <full-stacktrace>
+              <![CDATA[com.nuance.him.service.serviceexception.CustomerServiceException: 
+at com.nuance.him.service.customer.CustomerServiceImpl.findCustomerById(CustomerServiceImpl.java:62)
+at com.nuance.him.service.CustomerServiceImplTest.testFindCustomerException(CustomerServiceImplTest.java:143)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:790)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:143)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner.privateRun(TestRunner.java:763)
+at org.testng.TestRunner.run(TestRunner.java:594)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1146)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
+at org.testng.TestNG.runSuites(TestNG.java:997)
+at org.testng.TestNG.run(TestNG.java:965)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:205)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:108)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: com.nuance.him.dao.daoexception.CustomerDaoException: 
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.nuance.him.service.serviceexception.CustomerServiceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFindCustomerException -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.CustomerServiceImplTest@5b275dab]" name="setUp" is-config="true" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testFindCustomer()[pri:0, instance:com.nuance.him.service.CustomerServiceImplTest@5b275dab]" name="testFindCustomer" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFindCustomer -->
+      </class> <!-- com.nuance.him.service.CustomerServiceImplTest -->
+      <class name="com.nuance.him.service.AccountServiceImplTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="setUp" is-config="true" duration-ms="261" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testDepositException()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="testDepositException" duration-ms="26" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <exception class="com.nuance.him.service.serviceexception.AccountServiceException">
+            <full-stacktrace>
+              <![CDATA[com.nuance.him.service.serviceexception.AccountServiceException: 
+at com.nuance.him.service.account.AccountServiceImpl.getCurrentBalance(AccountServiceImpl.java:73)
+at com.nuance.him.service.account.AccountServiceImpl.depositeAmount(AccountServiceImpl.java:55)
+at com.nuance.him.service.AccountServiceImplTest.testDepositException(AccountServiceImplTest.java:148)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:790)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:143)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner.privateRun(TestRunner.java:763)
+at org.testng.TestRunner.run(TestRunner.java:594)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1146)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
+at org.testng.TestNG.runSuites(TestNG.java:997)
+at org.testng.TestNG.run(TestNG.java:965)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:205)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:108)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: com.nuance.him.dao.daoexception.AccountDaoException: 
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.nuance.him.service.serviceexception.AccountServiceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDepositException -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="setUp" is-config="true" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testDeposite()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="testDeposite" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeposite -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="setUp" is-config="true" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="setUp" is-config="true" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testGetAccountDetailException()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="testGetAccountDetailException" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <exception class="com.nuance.him.service.serviceexception.AccountServiceException">
+            <full-stacktrace>
+              <![CDATA[com.nuance.him.service.serviceexception.AccountServiceException: 
+at com.nuance.him.service.account.AccountServiceImpl.getAccountDetail(AccountServiceImpl.java:83)
+at com.nuance.him.service.AccountServiceImplTest.testGetAccountDetailException(AccountServiceImplTest.java:180)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:790)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:143)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner.privateRun(TestRunner.java:763)
+at org.testng.TestRunner.run(TestRunner.java:594)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1146)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
+at org.testng.TestNG.runSuites(TestNG.java:997)
+at org.testng.TestNG.run(TestNG.java:965)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:205)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:108)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: com.nuance.him.dao.daoexception.AccountDaoException: 
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.nuance.him.service.serviceexception.AccountServiceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAccountDetailException -->
+        <test-method status="PASS" signature="testGetAccountDetail()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="testGetAccountDetail" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAccountDetail -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="setUp" is-config="true" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testGetBalance()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="testGetBalance" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetBalance -->
+        <test-method status="PASS" signature="testGetBalanceException()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="testGetBalanceException" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <exception class="com.nuance.him.service.serviceexception.AccountServiceException">
+            <full-stacktrace>
+              <![CDATA[com.nuance.him.service.serviceexception.AccountServiceException: 
+at com.nuance.him.service.account.AccountServiceImpl.getCurrentBalance(AccountServiceImpl.java:73)
+at com.nuance.him.service.AccountServiceImplTest.testGetBalanceException(AccountServiceImplTest.java:114)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:790)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:143)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner.privateRun(TestRunner.java:763)
+at org.testng.TestRunner.run(TestRunner.java:594)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1146)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
+at org.testng.TestNG.runSuites(TestNG.java:997)
+at org.testng.TestNG.run(TestNG.java:965)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:205)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:108)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: com.nuance.him.dao.daoexception.AccountDaoException: 
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.nuance.him.service.serviceexception.AccountServiceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetBalanceException -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="setUp" is-config="true" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testOpenAccount()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="testOpenAccount" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOpenAccount -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="setUp" is-config="true" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="setUp" is-config="true" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testOpenAccountException()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="testOpenAccountException" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <exception class="com.nuance.him.service.serviceexception.AccountServiceException">
+            <full-stacktrace>
+              <![CDATA[com.nuance.him.service.serviceexception.AccountServiceException: 
+at com.nuance.him.service.account.AccountServiceImpl.getAccountTypeId(AccountServiceImpl.java:115)
+at com.nuance.him.service.account.AccountServiceImpl.addAccount(AccountServiceImpl.java:44)
+at com.nuance.him.service.AccountServiceImplTest.testOpenAccountException(AccountServiceImplTest.java:82)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:790)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:143)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner.privateRun(TestRunner.java:763)
+at org.testng.TestRunner.run(TestRunner.java:594)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1146)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
+at org.testng.TestNG.runSuites(TestNG.java:997)
+at org.testng.TestNG.run(TestNG.java:965)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:205)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:108)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: com.nuance.him.dao.daoexception.AccountDaoException: 
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.nuance.him.service.serviceexception.AccountServiceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOpenAccountException -->
+        <test-method status="PASS" signature="testWithDrawAmountException()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="testWithDrawAmountException" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <exception class="com.nuance.him.service.serviceexception.AccountServiceException">
+            <full-stacktrace>
+              <![CDATA[com.nuance.him.service.serviceexception.AccountServiceException: 
+at com.nuance.him.service.account.AccountServiceImpl.getCurrentBalance(AccountServiceImpl.java:73)
+at com.nuance.him.service.AccountServiceImplTest.testWithDrawAmountException(AccountServiceImplTest.java:214)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:790)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:143)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner.privateRun(TestRunner.java:763)
+at org.testng.TestRunner.run(TestRunner.java:594)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1146)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
+at org.testng.TestNG.runSuites(TestNG.java:997)
+at org.testng.TestNG.run(TestNG.java:965)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:205)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:108)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: com.nuance.him.dao.daoexception.AccountDaoException: 
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.nuance.him.service.serviceexception.AccountServiceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWithDrawAmountException -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="setUp" is-config="true" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testWithdraw()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="testWithdraw" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWithdraw -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.AccountServiceImplTest@4501b7af]" name="setUp" is-config="true" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+      </class> <!-- com.nuance.him.service.AccountServiceImplTest -->
+      <class name="com.nuance.him.service.InterestServiceimplTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.InterestServiceimplTest@61832929]" name="setUp" is-config="true" duration-ms="4" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testGetBalanceException()[pri:0, instance:com.nuance.him.service.InterestServiceimplTest@61832929]" name="testGetBalanceException" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <exception class="com.nuance.him.service.serviceexception.InterestServiceException">
+            <full-stacktrace>
+              <![CDATA[com.nuance.him.service.serviceexception.InterestServiceException: 
+at com.nuance.him.service.account.InterestCalculatorServiceImpl.calculateMonthlyInterest(InterestCalculatorServiceImpl.java:40)
+at com.nuance.him.service.InterestServiceimplTest.testGetBalanceException(InterestServiceimplTest.java:73)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:790)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:143)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner.privateRun(TestRunner.java:763)
+at org.testng.TestRunner.run(TestRunner.java:594)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1146)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
+at org.testng.TestNG.runSuites(TestNG.java:997)
+at org.testng.TestNG.run(TestNG.java:965)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:205)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:108)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: com.nuance.him.dao.daoexception.InterestDaoException: 
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.nuance.him.service.serviceexception.InterestServiceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetBalanceException -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.InterestServiceimplTest@61832929]" name="setUp" is-config="true" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testInterestRateCalculator()[pri:0, instance:com.nuance.him.service.InterestServiceimplTest@61832929]" name="testInterestRateCalculator" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInterestRateCalculator -->
+      </class> <!-- com.nuance.him.service.InterestServiceimplTest -->
+      <class name="com.nuance.him.service.TransferAmountServiceImplTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.TransferAmountServiceImplTest@29774679]" name="setUp" is-config="true" duration-ms="5" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testTransactionHistory()[pri:0, instance:com.nuance.him.service.TransferAmountServiceImplTest@29774679]" name="testTransactionHistory" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransactionHistory -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.TransferAmountServiceImplTest@29774679]" name="setUp" is-config="true" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testTransactionHistoryException()[pri:0, instance:com.nuance.him.service.TransferAmountServiceImplTest@29774679]" name="testTransactionHistoryException" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <exception class="com.nuance.him.service.serviceexception.TransferAmountServiceException">
+            <full-stacktrace>
+              <![CDATA[com.nuance.him.service.serviceexception.TransferAmountServiceException: 
+at com.nuance.him.service.transaction.TransferAmountServiceImpl.getTransactionHistory(TransferAmountServiceImpl.java:75)
+at com.nuance.him.service.TransferAmountServiceImplTest.testTransactionHistoryException(TransferAmountServiceImplTest.java:107)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:790)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:143)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner.privateRun(TestRunner.java:763)
+at org.testng.TestRunner.run(TestRunner.java:594)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1146)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
+at org.testng.TestNG.runSuites(TestNG.java:997)
+at org.testng.TestNG.run(TestNG.java:965)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:205)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:108)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: com.nuance.him.dao.daoexception.TransferDaoException: 
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.nuance.him.service.serviceexception.TransferAmountServiceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransactionHistoryException -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.TransferAmountServiceImplTest@29774679]" name="setUp" is-config="true" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testTransferAmount()[pri:0, instance:com.nuance.him.service.TransferAmountServiceImplTest@29774679]" name="testTransferAmount" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransferAmount -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.TransferAmountServiceImplTest@29774679]" name="setUp" is-config="true" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testTransferAmountException()[pri:0, instance:com.nuance.him.service.TransferAmountServiceImplTest@29774679]" name="testTransferAmountException" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <exception class="com.nuance.him.service.serviceexception.TransferAmountServiceException">
+            <full-stacktrace>
+              <![CDATA[com.nuance.him.service.serviceexception.TransferAmountServiceException: 
+at com.nuance.him.service.transaction.TransferAmountServiceImpl.transferAmount(TransferAmountServiceImpl.java:65)
+at com.nuance.him.service.TransferAmountServiceImplTest.testTransferAmountException(TransferAmountServiceImplTest.java:76)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:790)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:143)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner.privateRun(TestRunner.java:763)
+at org.testng.TestRunner.run(TestRunner.java:594)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1146)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
+at org.testng.TestNG.runSuites(TestNG.java:997)
+at org.testng.TestNG.run(TestNG.java:965)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:205)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:108)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: com.nuance.him.dao.daoexception.TransferDaoException: 
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.nuance.him.service.serviceexception.TransferAmountServiceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransferAmountException -->
+      </class> <!-- com.nuance.him.service.TransferAmountServiceImplTest -->
+      <class name="com.nuance.him.service.AtmServiceImplTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.AtmServiceImplTest@523884b2]" name="setUp" is-config="true" duration-ms="10" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testIsAtmAlreadyTaken()[pri:0, instance:com.nuance.him.service.AtmServiceImplTest@523884b2]" name="testIsAtmAlreadyTaken" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIsAtmAlreadyTaken -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.AtmServiceImplTest@523884b2]" name="setUp" is-config="true" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testIsAtmAlreadyTakenException()[pri:0, instance:com.nuance.him.service.AtmServiceImplTest@523884b2]" name="testIsAtmAlreadyTakenException" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <exception class="com.nuance.him.service.serviceexception.AtmServiceException">
+            <full-stacktrace>
+              <![CDATA[com.nuance.him.service.serviceexception.AtmServiceException: 
+at com.nuance.him.service.atm.AtmServiceImpl.isAlreadyAtmTaken(AtmServiceImpl.java:70)
+at com.nuance.him.service.AtmServiceImplTest.testIsAtmAlreadyTakenException(AtmServiceImplTest.java:117)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:790)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:143)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner.privateRun(TestRunner.java:763)
+at org.testng.TestRunner.run(TestRunner.java:594)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1146)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
+at org.testng.TestNG.runSuites(TestNG.java:997)
+at org.testng.TestNG.run(TestNG.java:965)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:205)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:108)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: com.nuance.him.dao.daoexception.AtmDaoException: 
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.nuance.him.service.serviceexception.AtmServiceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIsAtmAlreadyTakenException -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.AtmServiceImplTest@523884b2]" name="setUp" is-config="true" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testIssueAtm()[pri:0, instance:com.nuance.him.service.AtmServiceImplTest@523884b2]" name="testIssueAtm" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIssueAtm -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nuance.him.service.AtmServiceImplTest@523884b2]" name="setUp" is-config="true" duration-ms="1" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testIssueAtmException()[pri:0, instance:com.nuance.him.service.AtmServiceImplTest@523884b2]" name="testIssueAtmException" duration-ms="0" started-at="2019-02-25T17:43:20 IST" finished-at="2019-02-25T17:43:20 IST">
+          <exception class="com.nuance.him.service.serviceexception.AtmServiceException">
+            <full-stacktrace>
+              <![CDATA[com.nuance.him.service.serviceexception.AtmServiceException: 
+at com.nuance.him.service.atm.AtmServiceImpl.issueAtmCard(AtmServiceImpl.java:60)
+at com.nuance.him.service.AtmServiceImplTest.testIssueAtmException(AtmServiceImplTest.java:85)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:790)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:143)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner.privateRun(TestRunner.java:763)
+at org.testng.TestRunner.run(TestRunner.java:594)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1146)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
+at org.testng.TestNG.runSuites(TestNG.java:997)
+at org.testng.TestNG.run(TestNG.java:965)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:205)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:108)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: com.nuance.him.service.serviceexception.AtmAlreadyTakenException: Atm Already issued
+at com.nuance.him.service.atm.AtmServiceImpl.issueAtmCard(AtmServiceImpl.java:51)
+... 32 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.nuance.him.service.serviceexception.AtmServiceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIssueAtmException -->
+      </class> <!-- com.nuance.him.service.AtmServiceImplTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

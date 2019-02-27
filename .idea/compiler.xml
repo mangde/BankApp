@@ -17,6 +17,14 @@
     <bytecodeTargetLevel>
       <module name="app" target="1.8" />
       <module name="BankApp" target="1.8" />
+      <module name="BankApp_cucumberTest_main" target="1.8" />
+      <module name="BankApp_cucumberTest_test" target="1.8" />
+      <module name="BankApp_main" target="1.8" />
+      <module name="BankApp_test" target="1.8" />
+      <module name="BankApp_test_main" target="1.8" />
+      <module name="BankApp_test_test" target="1.8" />
+      <module name="BanlApp_test_main" target="1.8" />
+      <module name="BanlApp_test_test" target="1.8" />
       <module name="config" target="1.8" />
       <module name="controller" target="1.8" />
       <module name="dao" target="1.8" />

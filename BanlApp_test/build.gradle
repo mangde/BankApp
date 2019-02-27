@@ -1,0 +1,52 @@
+group 'com.bank'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'io.spring.dependency-management'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url = 'http://repo.maven.apache.org/maven2'
+        }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.10.RELEASE"
+    }
+}
+
+repositories { mavenCentral() }
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-parent:2.0.5.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-test:2.1.0.RELEASE'
+    compile("org.springframework.boot:spring-boot-starter-web:2.1.1.RELEASE")
+    compile 'com.microsoft.sqlserver:mssql-jdbc:6.1.0.jre8'
+    compile group: 'org.apache.tomcat', name: 'tomcat-jdbc', version: '7.0.19'
+    compile 'org.springframework.boot:spring-boot-starter-jdbc:2.1.1.RELEASE'
+    compile 'org.hibernate:hibernate-validator:6.0.13.Final'
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'org.apache.httpcomponents:httpclient:4.5.3'
+
+    compile group: 'com.mchange', name: 'c3p0', version: '0.9.2.1'
+
+    testCompile 'org.springframework:spring-test'
+    testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.0'
+
+    testCompile 'org.testng:testng:6.8.21'
+    testCompile 'info.cukes:cucumber-java:1.2.4'
+    testCompile 'info.cukes:cucumber-junit:1.2.4'
+    testCompile 'info.cukes:cucumber-spring:1.2.4'
+
+      compile fileTree(includes: ['app-1.0-SNAPSHOT.jar','model-1.0-SNAPSHOT.jar','config-1.0-SNAPSHOT.jar','controller-1.0-SNAPSHOT.jar'],dir: 'libs')
+    compile fileTree(includes: ['dao-1.0-SNAPSHOT.jar', 'DatabaseConfiguration-1.0-SNAPSHOT.jar', 'service-1.0-SNAPSHOT.jar', 'model-1.0-SNAPSHOT.jar',], dir: 'libs')
+}
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}

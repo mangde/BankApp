@@ -1,0 +1,5 @@
+com\nuance\him\service\CustomerServiceImplTest.class
+com\nuance\him\service\AccountServiceImplTest.class
+com\nuance\him\service\InterestServiceimplTest.class
+com\nuance\him\service\AtmServiceImplTest.class
+com\nuance\him\service\TransferAmountServiceImplTest.class

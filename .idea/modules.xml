@@ -3,12 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BankApp.iml" filepath="$PROJECT_DIR$/BankApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/config/config.iml" filepath="$PROJECT_DIR$/config/config.iml" />
-      <module fileurl="file://$PROJECT_DIR$/controller/controller.iml" filepath="$PROJECT_DIR$/controller/controller.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dao/dao.iml" filepath="$PROJECT_DIR$/dao/dao.iml" />
-      <module fileurl="file://$PROJECT_DIR$/model/model.iml" filepath="$PROJECT_DIR$/model/model.iml" />
-      <module fileurl="file://$PROJECT_DIR$/service/service.iml" filepath="$PROJECT_DIR$/service/service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BankApp_cucumberTest.iml" filepath="$PROJECT_DIR$/.idea/modules/BankApp_cucumberTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BankApp_cucumberTest_main.iml" filepath="$PROJECT_DIR$/.idea/modules/BankApp_cucumberTest_main.iml" group="BankApp_cucumberTest" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BankApp_cucumberTest_test.iml" filepath="$PROJECT_DIR$/.idea/modules/BankApp_cucumberTest_test.iml" group="BankApp_cucumberTest" />
+      <module fileurl="file://$PROJECT_DIR$/BankApp_app/app.iml" filepath="$PROJECT_DIR$/BankApp_app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BankApp_config/config.iml" filepath="$PROJECT_DIR$/BankApp_config/config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BankApp_controller/controller.iml" filepath="$PROJECT_DIR$/BankApp_controller/controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BankApp_dao/dao.iml" filepath="$PROJECT_DIR$/BankApp_dao/dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BankApp_model/model.iml" filepath="$PROJECT_DIR$/BankApp_model/model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BankApp_service/service.iml" filepath="$PROJECT_DIR$/BankApp_service/service.iml" />
     </modules>
   </component>
 </project>

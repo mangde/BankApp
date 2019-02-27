@@ -1,0 +1,15 @@
+com\nuance\him\config\customer\CustomerServicesConfigTest.class
+com\nuance\him\config\interest\InterestServiceConfigTest.class
+com\nuance\him\config\transaction\SpringTransferDaoConfigTest.class
+com\nuance\him\config\transaction\TransferAmountControllerConfigTest.class
+com\nuance\him\config\transaction\TransferAmountServiceConfigTest.class
+com\nuance\him\config\account\AccountControllerConfigTest.class
+com\nuance\him\config\interest\InterestControllerConfigTest.class
+com\nuance\him\config\customer\SpringCustomerDaoConfigTest.class
+com\nuance\him\config\atm\SpringAtmDaoConfigTest.class
+com\nuance\him\config\customer\CustomerControllerConfigTest.class
+com\nuance\him\config\account\AccountServiceConfigTest.class
+com\nuance\him\config\atm\AtmControllerConfigTest.class
+com\nuance\him\config\account\SpringAccountDaoConfigTest.class
+com\nuance\him\config\atm\AtmServiceConfigTest.class
+com\nuance\him\config\interest\SpringInterestDaoConfigTest.class

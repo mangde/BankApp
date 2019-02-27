@@ -1,0 +1,5 @@
+com\nuance\him\dao\test\SpringTransferDaoImplTest.class
+com\nuance\him\dao\test\SpringAccountDaoImplTest.class
+com\nuance\him\dao\test\SpringAtmDaoImplTest.class
+com\nuance\him\dao\test\SpringCustomerDaoImplTest.class
+com\nuance\him\dao\test\SpringInterestDaoImplTest.class

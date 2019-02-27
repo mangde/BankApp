@@ -1,0 +1,144 @@
+<html>
+<head>
+<title>TestNG:  Surefire test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Surefire test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>13/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Feb 25 17:43:24 IST 2019</td>
+</tr>
+<tr><td>Total time:</td><td>3 seconds (3302 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.nuance.him.controller.test.CustomerControllerTest.testAddCustomer()'><b>testAddCustomer</b><br>Test class: com.nuance.him.controller.test.CustomerControllerTest</td>
+<td></td>
+<td>0</td>
+<td>com.nuance.him.controller.test.CustomerControllerTest@7a30d1e6</td></tr>
+<tr>
+<td title='com.nuance.him.controller.test.InterestControllerTest.testCalMonthlyInterest()'><b>testCalMonthlyInterest</b><br>Test class: com.nuance.him.controller.test.InterestControllerTest</td>
+<td></td>
+<td>0</td>
+<td>com.nuance.him.controller.test.InterestControllerTest@33723e30</td></tr>
+<tr>
+<td title='com.nuance.him.controller.test.AccountControllerTest.testDepositeAmount()'><b>testDepositeAmount</b><br>Test class: com.nuance.him.controller.test.AccountControllerTest</td>
+<td></td>
+<td>0</td>
+<td>com.nuance.him.controller.test.AccountControllerTest@1b26f7b2</td></tr>
+<tr>
+<td title='com.nuance.him.controller.test.AtmControllerTest.testDisplayAtmDetails()'><b>testDisplayAtmDetails</b><br>Test class: com.nuance.him.controller.test.AtmControllerTest</td>
+<td></td>
+<td>0</td>
+<td>com.nuance.him.controller.test.AtmControllerTest@7cbd213e</td></tr>
+<tr>
+<td title='com.nuance.him.controller.test.CustomerControllerTest.testDisplayCustomers()'><b>testDisplayCustomers</b><br>Test class: com.nuance.him.controller.test.CustomerControllerTest</td>
+<td></td>
+<td>0</td>
+<td>com.nuance.him.controller.test.CustomerControllerTest@7a30d1e6</td></tr>
+<tr>
+<td title='com.nuance.him.controller.test.CustomerControllerTest.testFindCustomerById()'><b>testFindCustomerById</b><br>Test class: com.nuance.him.controller.test.CustomerControllerTest</td>
+<td></td>
+<td>0</td>
+<td>com.nuance.him.controller.test.CustomerControllerTest@7a30d1e6</td></tr>
+<tr>
+<td title='com.nuance.him.controller.test.AccountControllerTest.testGetAccountDetail()'><b>testGetAccountDetail</b><br>Test class: com.nuance.him.controller.test.AccountControllerTest</td>
+<td></td>
+<td>0</td>
+<td>com.nuance.him.controller.test.AccountControllerTest@1b26f7b2</td></tr>
+<tr>
+<td title='com.nuance.him.controller.test.AccountControllerTest.testGetBalance()'><b>testGetBalance</b><br>Test class: com.nuance.him.controller.test.AccountControllerTest</td>
+<td></td>
+<td>0</td>
+<td>com.nuance.him.controller.test.AccountControllerTest@1b26f7b2</td></tr>
+<tr>
+<td title='com.nuance.him.controller.test.AtmControllerTest.testIssueAtm()'><b>testIssueAtm</b><br>Test class: com.nuance.him.controller.test.AtmControllerTest</td>
+<td></td>
+<td>0</td>
+<td>com.nuance.him.controller.test.AtmControllerTest@7cbd213e</td></tr>
+<tr>
+<td title='com.nuance.him.controller.test.AccountControllerTest.testOpenAccount()'><b>testOpenAccount</b><br>Test class: com.nuance.him.controller.test.AccountControllerTest</td>
+<td></td>
+<td>0</td>
+<td>com.nuance.him.controller.test.AccountControllerTest@1b26f7b2</td></tr>
+<tr>
+<td title='com.nuance.him.controller.test.TransferAmountControllerTest.testTransactionHistory()'><b>testTransactionHistory</b><br>Test class: com.nuance.him.controller.test.TransferAmountControllerTest</td>
+<td></td>
+<td>0</td>
+<td>com.nuance.him.controller.test.TransferAmountControllerTest@3ecd23d9</td></tr>
+<tr>
+<td title='com.nuance.him.controller.test.TransferAmountControllerTest.testTransferAmount()'><b>testTransferAmount</b><br>Test class: com.nuance.him.controller.test.TransferAmountControllerTest</td>
+<td></td>
+<td>0</td>
+<td>com.nuance.him.controller.test.TransferAmountControllerTest@3ecd23d9</td></tr>
+<tr>
+<td title='com.nuance.him.controller.test.AccountControllerTest.testWithDrawAmount()'><b>testWithDrawAmount</b><br>Test class: com.nuance.him.controller.test.AccountControllerTest</td>
+<td></td>
+<td>0</td>
+<td>com.nuance.him.controller.test.AccountControllerTest@1b26f7b2</td></tr>
+</table><p>
+</body>
+</html>

@@ -1,0 +1,6 @@
+com\nuance\him\model\transaction\TransferAmount.class
+com\nuance\him\model\accountmodel\Account.class
+com\nuance\him\model\atm\AtmDetail.class
+com\nuance\him\model\accountmodel\InterestCalculator.class
+com\nuance\him\model\customermodel\Customer.class
+com\nuance\him\model\accountmodel\AccountType.class
